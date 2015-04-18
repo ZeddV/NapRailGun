@@ -112,7 +112,7 @@ using UnityEngine;
 				else if(move<0)
 				{
 					Debug.Log ("Else Here");
-					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_LeftCheck.position, k_GroundedRadius, m_WhatIsGround);
+					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_RightCheck.position, k_GroundedRadius, m_WhatIsGround);
 					
 					for (int i = 0; i < colliders.Length; i++)
 					{
