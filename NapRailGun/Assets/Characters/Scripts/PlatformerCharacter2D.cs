@@ -18,11 +18,19 @@ using UnityEngine;
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+		private Transform m_RightCheck;
+		private Transform m_LeftCheck;
+		public bool m_SideCollisionRight;
+		public bool m_SideCollisionLeft;
+
         private void Awake()
         {
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
+
+			m_RightCheck = transform.Find ("RightCheck");
+			m_LeftCheck = transform.Find ("LeftCheck");
             //m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
@@ -44,8 +52,9 @@ using UnityEngine;
             
             for (int i = 0; i < colliders.Length; i++)
             {
-                if (colliders[i].gameObject != gameObject)
+                if (colliders[i].gameObject != gameObject) 
                     m_Grounded = true;
+
             }
             //m_Anim.SetBool("Ground", m_Grounded);
 
@@ -79,8 +88,51 @@ using UnityEngine;
                 //m_Anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
-                m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+				Debug.Log("Right:"+m_RightCheck.position + "Left:"+m_LeftCheck.position);
+				if(move>0)
+				{
+					Debug.Log("If Here");
+					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_RightCheck.position, k_GroundedRadius, m_WhatIsGround);
+					
+					for (int i = 0; i < colliders.Length; i++)
+					{
+						if (colliders[i].gameObject != gameObject) 
+						{
+							m_SideCollisionRight = true;
+							Debug.Log("Collision with " + colliders[i].gameObject.name);
+						}
+						
+					}
+					if (!m_SideCollisionRight)
+	                	m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
+					m_SideCollisionRight = false;
+				colliders = null;
+			}
+				else if(move<0)
+				{
+					Debug.Log ("Else Here");
+					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_LeftCheck.position, k_GroundedRadius, m_WhatIsGround);
+					
+					for (int i = 0; i < colliders.Length; i++)
+					{
+						if (colliders[i].gameObject != gameObject) 
+						{
+							m_SideCollisionLeft = true;
+							Debug.Log("Collision with " + colliders[i].gameObject.name);
+						}
+						
+					}
+					if (!m_SideCollisionLeft)
+					{
+						m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+						Debug.Log ("NO Collision Left");
+					}
+					
+					m_SideCollisionLeft = false;
+				colliders = null;
+
+				}
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !m_FacingRight)
                 {
