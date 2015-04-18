@@ -23,6 +23,8 @@ using UnityEngine;
 		public bool m_SideCollisionRight;
 		public bool m_SideCollisionLeft;
 
+		private Transform m_Shield;
+
         private void Awake()
         {
             // Setting up references.
@@ -33,6 +35,8 @@ using UnityEngine;
 			m_LeftCheck = transform.Find ("LeftCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+			m_Shield = transform.Find ("Shield");
         }
 
 
@@ -63,7 +67,7 @@ using UnityEngine;
         }
 
 
-        public void Move(float move, bool crouch, bool jump)
+        public void Move(float move, bool crouch, bool jump, bool shield)
         {
             // If crouching, check to see if the character can stand up
             if (!crouch)// && m_Anim.GetBool("Crouch"))
@@ -165,7 +169,14 @@ using UnityEngine;
                 //m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
+
+			if(shield)
+				m_Shield.GetComponent<SpriteRenderer> ().enabled = true;
+			else
+				m_Shield.GetComponent<SpriteRenderer> ().enabled = false;
         }
+
+		
 
 		/*
         private void Flip()
