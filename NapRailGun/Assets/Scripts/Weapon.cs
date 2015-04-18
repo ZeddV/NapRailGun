@@ -9,6 +9,7 @@ public class Weapon : MonoBehaviour {
 	public Transform bulletFlashPrefab;
 
 	public float effectSpawnRate = 1;
+	public string fireButton;
 
 	float timeToSpawnEffect = 0;
 	
@@ -53,13 +54,13 @@ public class Weapon : MonoBehaviour {
 
 		//Check Shoot
 		if (fireRate == 0) {
-			if (Input.GetButtonDown ("Fire1")) {
+			if (Input.GetButtonDown (fireButton)) {
 				Debug.Log ("Fire");
 				Shoot();
 			}
 		}
 		else {
-			if (Input.GetButton ("Fire1") && Time.time > timeToFire) {
+			if (Input.GetButton (fireButton) && Time.time > timeToFire) {
 				timeToFire = Time.time + 1/fireRate;
 				Shoot();
 			}
@@ -94,7 +95,9 @@ public class Weapon : MonoBehaviour {
 	}
 
 	void Effect(){
-		Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		Transform bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation) as Transform;
+		bullet.gameObject.GetComponent<MoveBullet> ().player = gameObject;
+		Debug.Log (bullet.gameObject.GetComponent<MoveBullet> ().player);
 		Transform effectInstanst = Instantiate(bulletFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
 		Destroy(effectInstanst.gameObject, 0.2f);
 	}
