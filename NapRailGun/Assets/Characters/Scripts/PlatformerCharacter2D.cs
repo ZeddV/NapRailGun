@@ -16,7 +16,7 @@ using UnityEngine;
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
-        private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+       // private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
 		private Transform m_RightCheck;
 		private Transform m_LeftCheck;
@@ -31,7 +31,7 @@ using UnityEngine;
 
 			m_RightCheck = transform.Find ("RightCheck");
 			m_LeftCheck = transform.Find ("LeftCheck");
-            //m_Anim = GetComponent<Animator>();
+            m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
@@ -88,10 +88,8 @@ using UnityEngine;
                 //m_Anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
-				Debug.Log("Right:"+m_RightCheck.position + "Left:"+m_LeftCheck.position);
 				if(move>0)
 				{
-					Debug.Log("If Here");
 					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_RightCheck.position, k_GroundedRadius, m_WhatIsGround);
 					
 					for (int i = 0; i < colliders.Length; i++)
@@ -99,7 +97,7 @@ using UnityEngine;
 						if (colliders[i].gameObject != gameObject) 
 						{
 							m_SideCollisionRight = true;
-							Debug.Log("Collision with " + colliders[i].gameObject.name);
+							//Debug.Log("Collision with " + colliders[i].gameObject.name);
 						}
 						
 					}
@@ -107,33 +105,35 @@ using UnityEngine;
 	                	m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
 					m_SideCollisionRight = false;
-				colliders = null;
-			}
+					colliders = null;
+					
+				}
 				else if(move<0)
-				{
-					Debug.Log ("Else Here");
-					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_RightCheck.position, k_GroundedRadius, m_WhatIsGround);
+				{					
+					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_LeftCheck.position, k_GroundedRadius, m_WhatIsGround);
 					
 					for (int i = 0; i < colliders.Length; i++)
 					{
 						if (colliders[i].gameObject != gameObject) 
 						{
 							m_SideCollisionLeft = true;
-							Debug.Log("Collision with " + colliders[i].gameObject.name);
+							//Debug.Log("Collision with " + colliders[i].gameObject.name);
 						}
 						
 					}
 					if (!m_SideCollisionLeft)
 					{
 						m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-						Debug.Log ("NO Collision Left");
+						//Debug.Log ("NO Collision Left");
 					}
 					
 					m_SideCollisionLeft = false;
-				colliders = null;
-
+					colliders = null;
 				}
+				
+				
                 // If the input is moving the player right and the player is facing left...
+				/*
                 if (move > 0 && !m_FacingRight)
                 {
                     // ... flip the player.
@@ -145,7 +145,17 @@ using UnityEngine;
                     // ... flip the player.
                     Flip();
                 }
+                */
             }
+
+			if (move < 0)	
+				m_Anim.SetInteger ("IsMoving", 1);
+			else if (move > 0)
+				m_Anim.SetInteger ("IsMoving", 2);
+			else
+				m_Anim.SetInteger("IsMoving",0);
+
+			Debug.Log(m_Anim.GetInteger("IsMoving"));
             // If the player should jump...
             if (m_Grounded && jump)// && m_Anim.GetBool("Ground"))
             {
@@ -157,7 +167,7 @@ using UnityEngine;
             }
         }
 
-
+		/*
         private void Flip()
         {
             // Switch the way the player is labelled as facing.
@@ -168,4 +178,5 @@ using UnityEngine;
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+        */
     }
