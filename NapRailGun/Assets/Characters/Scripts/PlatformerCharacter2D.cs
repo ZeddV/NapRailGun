@@ -16,15 +16,27 @@ using UnityEngine;
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
-        private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+       // private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+
+		private Transform m_RightCheck;
+		private Transform m_LeftCheck;
+		public bool m_SideCollisionRight;
+		public bool m_SideCollisionLeft;
+
+		private Transform m_Shield;
 
         private void Awake()
         {
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
             m_CeilingCheck = transform.Find("CeilingCheck");
-            //m_Anim = GetComponent<Animator>();
+
+			m_RightCheck = transform.Find ("RightCheck");
+			m_LeftCheck = transform.Find ("LeftCheck");
+            m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+			m_Shield = transform.Find ("Shield");
         }
 
 
@@ -44,8 +56,9 @@ using UnityEngine;
             
             for (int i = 0; i < colliders.Length; i++)
             {
-                if (colliders[i].gameObject != gameObject)
+                if (colliders[i].gameObject != gameObject) 
                     m_Grounded = true;
+
             }
             //m_Anim.SetBool("Ground", m_Grounded);
 
@@ -54,7 +67,7 @@ using UnityEngine;
         }
 
 
-        public void Move(float move, bool crouch, bool jump)
+        public void Move(float move, bool crouch, bool jump, bool shield)
         {
             // If crouching, check to see if the character can stand up
             if (!crouch)// && m_Anim.GetBool("Crouch"))
@@ -79,9 +92,52 @@ using UnityEngine;
                 //m_Anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
-                m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+				if(move>0)
+				{
+					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_RightCheck.position, k_GroundedRadius, m_WhatIsGround);
+					
+					for (int i = 0; i < colliders.Length; i++)
+					{
+						if (colliders[i].gameObject != gameObject) 
+						{
+							m_SideCollisionRight = true;
+							//Debug.Log("Collision with " + colliders[i].gameObject.name);
+						}
+						
+					}
+					if (!m_SideCollisionRight)
+	                	m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
+					m_SideCollisionRight = false;
+					colliders = null;
+					
+				}
+				else if(move<0)
+				{					
+					Collider2D[] colliders = Physics2D.OverlapCircleAll(m_LeftCheck.position, k_GroundedRadius, m_WhatIsGround);
+					
+					for (int i = 0; i < colliders.Length; i++)
+					{
+						if (colliders[i].gameObject != gameObject) 
+						{
+							m_SideCollisionLeft = true;
+							//Debug.Log("Collision with " + colliders[i].gameObject.name);
+						}
+						
+					}
+					if (!m_SideCollisionLeft)
+					{
+						m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+						//Debug.Log ("NO Collision Left");
+					}
+					
+					m_SideCollisionLeft = false;
+					colliders = null;
+				}
+				
+				
                 // If the input is moving the player right and the player is facing left...
+				/*
                 if (move > 0 && !m_FacingRight)
                 {
                     // ... flip the player.
@@ -93,8 +149,20 @@ using UnityEngine;
                     // ... flip the player.
                     Flip();
                 }
+                */
             }
-            // If the player should jump...
+
+			/*if (move < 0)	
+				m_Anim.SetInteger ("IsMoving", 1);
+			else if (move > 0)
+				m_Anim.SetInteger ("IsMoving", 2);
+			else
+				m_Anim.SetInteger("IsMoving",0);
+			
+			Debug.Log(m_Anim.GetInteger("IsMoving"));
+
+*/
+		// If the player should jump...
             if (m_Grounded && jump)// && m_Anim.GetBool("Ground"))
             {
                 Debug.Log("JUMP!");
@@ -103,9 +171,16 @@ using UnityEngine;
                 //m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
+
+			if(shield)
+				m_Shield.GetComponent<SpriteRenderer> ().enabled = true;
+			else
+				m_Shield.GetComponent<SpriteRenderer> ().enabled = false;
         }
 
+		
 
+		/*
         private void Flip()
         {
             // Switch the way the player is labelled as facing.
@@ -116,4 +191,5 @@ using UnityEngine;
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+        */
     }
