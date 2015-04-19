@@ -4,6 +4,7 @@ using System.Collections;
 public class MoveBullet : MonoBehaviour {
 
 	public int moveSpeed = 230;
+	public int damage = 30;
 
 	public GameObject player;
 
@@ -19,10 +20,18 @@ public class MoveBullet : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D collision) {
-		Debug.Log (player);
-		Debug.Log (collision.gameObject.GetComponentInParent<Transform>().gameObject.name);
-		if (!(collision.gameObject == gameObject || collision.gameObject == collision.gameObject.GetComponentInParent<Transform>().gameObject)) {
+		//Debug.Log (transform.tag+" "+transform.name+"COLLISION WITH: "+collision.transform.tag);
+		//Debug.Log ("Player: "+player.name);
+		//Debug.Log (""+collision.gameObject.GetComponentInParent<Transform>().gameObject.name);
+		if (collision.transform.tag != transform.tag && collision.transform.tag != player.tag) {
+			Debug.Log ("TREFFER!"+collision.transform.name+" "+collision.transform.tag);
+			StatusControl status = collision.transform.GetComponent<PlatformerCharacter2D>().statusScript;
+			if(status != null){
+				Debug.Log("DAMAGE!: "+damage);
+				status.subHealth(damage);
+			}
 			Destroy (gameObject);
 		}	
+
 	}
 }

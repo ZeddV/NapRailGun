@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Item
+  - Player1
+  - Player2
+  - Player3
+  - Player4
+  - notshootable
   layers:
   - Default
   - TransparentFX

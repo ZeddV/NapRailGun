@@ -23,10 +23,12 @@ public class Weapon : MonoBehaviour {
 	bool left;
 
 	public StatusControl statusScript;
+	public Platformer2DUserControl controlsScript;
 
-	void start()
+	void Start()
 	{
 		statusScript = gameObject.GetComponent<PlatformerCharacter2D> ().statusScript;
+		controlsScript = gameObject.GetComponent<Platformer2DUserControl>();
 	}
 
 	// Use this for initialization
@@ -43,35 +45,40 @@ public class Weapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(Input.GetKeyDown(KeyCode.LeftArrow)){
+		float horizontalDirection = Input.GetAxis (controlsScript.axisHorizontal);
+		if(horizontalDirection > 0){
 			left = true;
 		} 
-		else if(Input.GetKeyDown (KeyCode.RightArrow)){
+		else if(horizontalDirection < 0){
 			left = false;
 		}
 
 		if(left){
+			changeRotationOfFirePoint(0);
 			shootDirection = new Vector2(-1, 0);
 		} else {
+			changeRotationOfFirePoint(180);
 			shootDirection = new Vector2(1, 0);
 		}
-		if(Input.GetKey(KeyCode.DownArrow)){
+		float vertDirection = Input.GetAxis (controlsScript.axisVertical);
+		if(vertDirection < 0){
 			Debug.Log ("Down");
+			changeRotationOfFirePoint(270);
 			shootDirection = new Vector2(0, -1.5f);
-		} else if(Input.GetKey(KeyCode.UpArrow)){
+		} else if(vertDirection > 0){
+			changeRotationOfFirePoint(90);
 			shootDirection = new Vector2(0, 1.5f);
 		}
 
 		//Check Shoot
 		if (fireRate == 0) {
-			if (Input.GetButtonDown (fireButton)) {
+			if (Input.GetButtonDown (controlsScript.fire)) {
 				Debug.Log ("Fire");
 				Shoot();
 			}
 		}
 		else {
-			if (Input.GetButton (fireButton) && Time.time > timeToFire) {
+			if (Input.GetButton (controlsScript.fire) && Time.time > timeToFire) {
 				timeToFire = Time.time + 1/fireRate;
 				Shoot();
 			}
@@ -86,7 +93,7 @@ public class Weapon : MonoBehaviour {
 	}
 	
 	void Shoot () {
-		Debug.Log (statusScript);
+//		Debug.Log (statusScript);
 		if(!statusScript.subEnergy(energyCost)) 
 		{
 			return;
@@ -94,7 +101,7 @@ public class Weapon : MonoBehaviour {
 
 		Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2 (firePoint.position.x, firePoint.position.y);
-		Debug.Log ("direction"+(mousePosition-firePointPosition));
+//		Debug.Log ("direction"+(mousePosition-firePointPosition));
 		//direction = mousePosition-firePointPosition for mouse
 		RaycastHit2D hit = Physics2D.Raycast (firePointPosition, shootDirection, 100);
 
@@ -116,5 +123,11 @@ public class Weapon : MonoBehaviour {
 		Debug.Log (bullet.gameObject.GetComponent<MoveBullet> ().player);
 		Transform effectInstanst = Instantiate(bulletFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
 		Destroy(effectInstanst.gameObject, 0.2f);
+	}
+
+	void changeRotationOfFirePoint(float z){
+		var rotationVector = firePoint.rotation.eulerAngles;
+		rotationVector.z = z;
+		firePoint.rotation = Quaternion.Euler(rotationVector);
 	}
 }
