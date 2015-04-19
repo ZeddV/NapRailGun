@@ -1,0 +1,308 @@
+fileFormatVersion: 2
+guid: c5f3c2f09d8e0bf459c9506463557217
+timeCreated: 1429363619
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dr-wily_0
+    21300002: dr-wily_1
+    21300004: dr-wily_2
+    21300006: dr-wily_3
+    21300008: dr-wily_4
+    21300010: dr-wily_5
+    21300012: dr-wily_6
+    21300014: dr-wily_7
+    21300016: dr-wily_8
+    21300018: dr-wily_9
+    21300020: dr-wily_10
+    21300022: dr-wily_11
+    21300024: dr-wily_12
+    21300026: dr-wily_13
+    21300028: dr-wily_14
+    21300030: dr-wily_15
+    21300032: dr-wily_16
+    21300034: dr-wily_17
+    21300036: dr-wily_18
+    21300038: dr-wily_19
+    21300040: dr-wily_20
+    21300042: dr-wily_21
+    21300044: dr-wily_22
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: dr-wily_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 146
+        width: 44
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 146
+        width: 44
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 136
+        width: 46
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 136
+        width: 52
+        height: 56
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_4
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 136
+        width: 60
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_5
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 136
+        width: 60
+        height: 56
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 136
+        width: 26
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 136
+        width: 20
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 126
+        width: 20
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 126
+        width: 20
+        height: 8
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 66
+        width: 44
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_11
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 66
+        width: 44
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_12
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 66
+        width: 46
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 66
+        width: 44
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_14
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 66
+        width: 44
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_15
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 66
+        width: 52
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_16
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 66
+        width: 52
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 52
+        height: 52
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 2
+        width: 52
+        height: 50
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_19
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 2
+        width: 52
+        height: 60
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_20
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 2
+        width: 52
+        height: 56
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_21
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 2
+        width: 60
+        height: 36
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dr-wily_22
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2
+        width: 60
+        height: 34
+      alignment: 1
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
