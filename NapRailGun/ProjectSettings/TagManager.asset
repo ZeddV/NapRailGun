@@ -4,7 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Player1
+  - Player2
+  - Player3
+  - Player4
+  - notshootable
   - Item
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -18,9 +24,9 @@ TagManager:
   - Bullets
   - Background
   - Beam
-  - 
-  - 
-  - 
+  - TombStone
+  - Portal
+  - Shield
   - 
   - 
   - 
@@ -42,9 +48,15 @@ TagManager:
   - name: Background Image
     uniqueID: 402827195
     locked: 0
+  - name: Tombstone
+    uniqueID: 1062036599
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Beam
     uniqueID: 3754362625
+    locked: 0
+  - name: Front
+    uniqueID: 3731434415
     locked: 0

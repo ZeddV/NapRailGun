@@ -63,6 +63,7 @@ public class PortalScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider)
 	//void OnCollisionEnter2D(Collision2D collision)
 	{
+		//Debug.log
 		//Collider2D collider = collision.collider;
 		if (!active)
 			return;
@@ -165,7 +166,7 @@ public class PortalScript : MonoBehaviour {
 			break;	
 			
 		case Direction.DOWN:
-			posY -= offInMain;
+			posY -= offInMain*1.2f;
 			posX += offsetVector.x;
 			
 			player.transform.position = new Vector3(posX, posY, posZ);
