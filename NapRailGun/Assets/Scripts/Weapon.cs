@@ -54,7 +54,7 @@ public class Weapon : MonoBehaviour {
 
 		//Check Shoot
 		if (fireRate == 0) {
-			if (Input.GetButtonDown (fireButton)) {
+			if (Input.GetAxis (fireButton)> 0.2f) {
 				Debug.Log ("Fire");
 				Shoot();
 			}

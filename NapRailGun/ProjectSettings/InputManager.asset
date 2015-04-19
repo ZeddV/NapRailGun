@@ -41,16 +41,16 @@ InputManager:
     m_Name: Horizontal3
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: j
-    positiveButton: l
+    negativeButton: left
+    positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 3
-    dead: .00100000005
-    sensitivity: 3
+    gravity: 1
+    dead: .200000003
+    sensitivity: 1
     snap: 1
     invert: 0
-    type: 0
+    type: 2
     axis: 0
     joyNum: 0
   - serializedVersion: 3
@@ -89,46 +89,46 @@ InputManager:
     m_Name: Fire1
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: tab
+    negativeButton: tab
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: mouse 0
-    gravity: 1000
+    gravity: 1
     dead: .00100000005
-    sensitivity: 1000
+    sensitivity: 1
     snap: 0
     invert: 0
     type: 0
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Fire2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: tab
+    positiveButton: 
     altNegativeButton: 
-    altPositiveButton: mouse 1
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 9
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire3
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: z
+    negativeButton: joystick button 5
+    positiveButton: 
     altNegativeButton: 
-    altPositiveButton: mouse 2
-    gravity: 1000
+    altPositiveButton: 
+    gravity: 1
     dead: .00100000005
-    sensitivity: 1000
-    snap: 0
+    sensitivity: 2
+    snap: 1
     invert: 0
     type: 0
     axis: 0
@@ -186,13 +186,13 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: i
+    positiveButton: joystick button 0
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
-    snap: 0
+    snap: 1
     invert: 0
     type: 0
     axis: 0
