@@ -3,6 +3,9 @@ using UnityEngine;
 
     public class PlatformerCharacter2D : MonoBehaviour
     {
+		public GameObject statusControl;
+		public StatusControl statusScript;
+
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -180,7 +183,12 @@ using UnityEngine;
 				m_Shield.GetComponent<SpriteRenderer> ().enabled = false;
         }
 
-		
+		public void setStatusControl(GameObject statusControl){
+			
+			Debug.Log ("StatusControl");
+			this.statusControl = statusControl;
+			this.statusScript = statusControl.GetComponent<StatusControl>();
+		}
 
 		/*
         private void Flip()

@@ -11,6 +11,7 @@ public class MasterScript : MonoBehaviour {
 	public Transform canvasStatus;
 	public Text txtMid;
 
+
 	bool PlayerAuswahl = true;
 	bool finish = false; 
 	bool begin = true;
@@ -24,6 +25,7 @@ public class MasterScript : MonoBehaviour {
 	ArrayList players = new ArrayList();
 	ArrayList playerStatus = new ArrayList();
 	Vector3[] playerStatusPosition = new Vector3[4];
+	public Transform[] playerPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -37,11 +39,24 @@ public class MasterScript : MonoBehaviour {
 			pinkLayer.SetActive(false);
 		}
 		GameObject panel;
+		GameObject player;
+		Platformer2DUserControl characterControl;
 		for(int i = 0; i < playerQuantity; i++){
 			panel = Instantiate (prefabStatus, playerStatusPosition[i], prefabStatus.transform.rotation ) as GameObject;
 			panel.transform.parent = canvasStatus;
 			panel.GetComponent<RectTransform>().anchoredPosition = playerStatusPosition[i];
 			panel.GetComponent<RectTransform>().localScale = new Vector3(0.4f, 0.4f, 0);
+
+			player = Instantiate(prefabPlayer, playerPosition[i].position, playerPosition[i].rotation) as GameObject;
+			player.GetComponent<PlatformerCharacter2D>().setStatusControl(panel);
+
+			characterControl = player.GetComponent<Platformer2DUserControl>();
+			characterControl.jump = "Jump"+(i+1);
+			characterControl.fire = "Fire"+(i+1);
+			characterControl.shield = "Shield"+(i+1);
+			characterControl.axisHorizontal = "Horizontal"+(i+1);
+			characterControl.axisVertical = "Vertical"+(i+1);
+
 		}
 	}
 	
