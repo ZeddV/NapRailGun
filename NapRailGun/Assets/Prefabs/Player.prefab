@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 467520}
   m_Layer: 2
   m_Name: RightCheck
-  m_TagString: notshootable
+  m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 407238}
   m_Layer: 2
   m_Name: GroundCheck
-  m_TagString: notshootable
+  m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - 4: {fileID: 415212}
   m_Layer: 2
   m_Name: CeilingCheck
-  m_TagString: notshootable
+  m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - 120: {fileID: 12093354}
   m_Layer: 11
   m_Name: Beam
-  m_TagString: notshootable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,10 +111,9 @@ GameObject:
   - 4: {fileID: 416440}
   - 212: {fileID: 21281536}
   - 82: {fileID: 8220946}
-  - 58: {fileID: 5843354}
   m_Layer: 2
   m_Name: Shield
-  m_TagString: notshootable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +129,7 @@ GameObject:
   - 82: {fileID: 8290762}
   m_Layer: 2
   m_Name: FirePoint
-  m_TagString: notshootable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +153,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .360000014, z: 0}
+  m_LocalPosition: {x: 0, y: .92900002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 478644}
@@ -178,8 +177,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.629999995, y: -.170000002, z: 0}
-  m_LocalScale: {x: .564482868, y: 1.94000006, z: 1}
+  m_LocalPosition: {x: -.600000024, y: -.5, z: 0}
+  m_LocalScale: {x: .564482868, y: .564483702, z: 1}
   m_Children: []
   m_Father: {fileID: 478644}
   m_RootOrder: 4
@@ -203,7 +202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .639999986, y: -.128000006, z: 0}
+  m_LocalPosition: {x: .600000024, y: -.5, z: 0}
   m_LocalScale: {x: .564482868, y: .564483702, z: 1}
   m_Children: []
   m_Father: {fileID: 478644}
@@ -227,7 +226,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: -8, z: 0}
+  m_LocalPosition: {x: -5.92665195, y: 2.5529592, z: 0}
   m_LocalScale: {x: .779999971, y: 1, z: 1}
   m_Children:
   - {fileID: 407238}
@@ -266,19 +265,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -.689999998}
   serializedVersion: 2
   m_Radius: .439999998
---- !u!58 &5843354
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196368}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: .709999979
 --- !u!60 &6015092
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -388,8 +374,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 260329a85eaa753408014df29c1c1ab2, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .603999972
+  m_PlayOnAwake: 1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -457,7 +443,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c0ed10d137fdb504e998e461f63e8dfd, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -556,9 +542,6 @@ MonoBehaviour:
   m_Grounded: 0
   m_SideCollisionRight: 0
   m_SideCollisionLeft: 0
-  tombstonePrefab: {fileID: 0}
-  tombstoneTexture: {fileID: 0}
-  respawnScript: {fileID: 0}
 --- !u!114 &11472964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -597,7 +580,6 @@ MonoBehaviour:
   effectSpawnRate: 10
   fireButton: Fire2
   statusScript: {fileID: 0}
-  controlsScript: {fileID: 0}
 --- !u!120 &12093354
 LineRenderer:
   m_ObjectHideFlags: 1

@@ -161,6 +161,7 @@ using UnityEngine;
                 */
             }
 
+<<<<<<< HEAD
 
 		if(m_Anim != null && m_Anim.isActiveAndEnabled) {
 			if (move < 0)	{
@@ -172,6 +173,14 @@ using UnityEngine;
 			}
 		}
 
+=======
+			if (move < 0) 
+				m_Anim.SetInteger ("IsMoving", 1);
+			else if (move > 0) 
+					m_Anim.SetInteger ("IsMoving", 2);
+			else 
+				m_Anim.SetInteger ("IsMoving", 0);
+>>>>>>> origin/characters
             // If the player should jump...
 
             if (m_Grounded && jump)// && m_Anim.GetBool("Ground"))
@@ -198,8 +207,19 @@ using UnityEngine;
 			this.statusScript = statusControl.GetComponent<StatusControl>();
 		}
 
+<<<<<<< HEAD
 		public void die(){
 			statusScript.die (respawnScript, tombstonePrefab);
+=======
+		public void playAnimVert(float v,float h){
+				if (v > 0) {
+				m_Anim.SetInteger ("Vertical", 1);
+			} else if (v < 0) {
+				m_Anim.SetInteger ("Vertical", 2);
+			} else
+				m_Anim.SetInteger ("Vertical", 0);
+		
+>>>>>>> origin/characters
 		}
 
 		/*

@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: 3437cadeb66fd5a4399c0c97bceb7f3e
+timeCreated: 1429449579
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: walk_color3_0
+    21300002: walk_color3_1
+    21300004: walk_color3_2
+    21300006: walk_color3_3
+    21300008: walk_color3_4
+    21300010: walk_color3_5
+    21300012: walk_color3_6
+    21300014: walk_color3_7
+    21300016: walk_color3_8
+    21300018: walk_color3_9
+    21300020: walk_color3_10
+    21300022: walk_color3_11
+    21300024: walk_color3_12
+    21300026: walk_color3_13
+    21300028: walk_color3_14
+    21300030: walk_color3_15
+    21300032: walk_color3_16
+    21300034: walk_color3_17
+    21300036: walk_color3_18
+    21300038: walk_color3_19
+    21300040: walk_color3_20
+    21300042: walk_color3_21
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: walk_color3_0
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 616
+        width: 205
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_1
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 621
+        width: 169
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_2
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 629
+        width: 217
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_3
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 628
+        width: 236
+        height: 336
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_4
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 630
+        width: 168
+        height: 341
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_5
+      rect:
+        serializedVersion: 2
+        x: 1866
+        y: 631
+        width: 169
+        height: 362
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 814
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_7
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 810
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_8
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 363
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_9
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 170
+        width: 205
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_10
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 170
+        width: 169
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_11
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 177
+        width: 217
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_12
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 177
+        width: 233
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_13
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 363
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_14
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 189
+        width: 169
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_15
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 182
+        width: 173
+        height: 355
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_16
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 619
+        width: 177
+        height: 357
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_17
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 619
+        width: 219
+        height: 345
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_18
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 623
+        width: 234
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_19
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 168
+        width: 173
+        height: 357
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_20
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 174
+        width: 218
+        height: 351
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk_color3_21
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 180
+        width: 236
+        height: 362
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
