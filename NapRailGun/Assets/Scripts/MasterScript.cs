@@ -10,11 +10,11 @@ public class MasterScript : MonoBehaviour {
 	public GameObject prefabStatus;
 	public Transform canvasStatus;
 	public Text txtMid;
-
+	public Text txtBottom;
 
 	bool PlayerAuswahl = true;
 	bool finish = false; 
-	bool begin = !true;
+	bool begin = true;
 	bool timebegin = false;
 	bool pause = false;
 	float tempTime; 
@@ -27,6 +27,10 @@ public class MasterScript : MonoBehaviour {
 	Vector3[] playerStatusPosition = new Vector3[4];
 	public Transform[] playerPosition;
 
+	public RespawnScript respawnScript;
+	public GameObject tombstonePrefab;
+	public Texture2D[] tombstoneSprites;
+
 	// Use this for initialization
 	void Start () {
 		playerStatusPosition[0] = new Vector3(-681.5f, -129.6f, 0);
@@ -35,9 +39,12 @@ public class MasterScript : MonoBehaviour {
 		playerStatusPosition[3] = new Vector3(-373.96f, -254f, 0);
 		pinkLayer = GameObject.Find ("PinkLayer");
 		grayLayer = GameObject.Find ("GrayLayer");
-		if(!pinkMode){
+		if(!pinkMode && pinkLayer != null){
 			pinkLayer.SetActive(false);
 		}
+
+		respawnScript.masterScript = this;
+
 		GameObject panel;
 		GameObject player;
 		Platformer2DUserControl characterControl;
@@ -49,7 +56,12 @@ public class MasterScript : MonoBehaviour {
 
 			player = Instantiate(prefabPlayer, playerPosition[i].position, playerPosition[i].rotation) as GameObject;
 			player.GetComponent<PlatformerCharacter2D>().setStatusControl(panel);
+
+			player.GetComponent<PlatformerCharacter2D>().tombstonePrefab = tombstonePrefab;
+			player.GetComponent<PlatformerCharacter2D>().tombstoneTexture = tombstoneSprites[i];
+			player.GetComponent<PlatformerCharacter2D>().respawnScript = this.respawnScript;
 			player.tag = "Player"+(i+1);
+
 
 			characterControl = player.GetComponent<Platformer2DUserControl>();
 			characterControl.jump = "Jump"+(i+1);
@@ -57,7 +69,6 @@ public class MasterScript : MonoBehaviour {
 			characterControl.shield = "Shield"+(i+1);
 			characterControl.axisHorizontal = "Horizontal"+(i+1);
 			characterControl.axisVertical = "Vertical"+(i+1);
-
 		}
 	}
 	
@@ -67,6 +78,7 @@ public class MasterScript : MonoBehaviour {
 		if(begin){
 			Time.timeScale = 0;
 			if(!timebegin){
+				txtMid.transform.gameObject.SetActive(true);
 				tempTime = Time.unscaledTime;
 				timebegin = true;
 			} else{
@@ -86,9 +98,7 @@ public class MasterScript : MonoBehaviour {
 				}
 			}
 		}
-		if(finish){
 
-		}
 		if(!begin){
 			if(Input.GetKeyDown(KeyCode.P)){
 				if(pause){
@@ -96,26 +106,38 @@ public class MasterScript : MonoBehaviour {
 					Time.timeScale = 1;
 					grayLayer.SetActive(false);
 					txtMid.transform.gameObject.SetActive(false);
+					txtBottom.transform.gameObject.SetActive(false);
 				} else {
 					pause = true;
 					Time.timeScale = 0;
 					grayLayer.SetActive(true);
 					txtMid.transform.gameObject.SetActive(true);
+					txtBottom.transform.gameObject.SetActive(true);
 					txtMid.text = "Pause";
 				}
 			}
 		}
 
-		if(pause){
+		if(pause || finish){
 			if(Input.GetKeyDown (KeyCode.Q)){
 				Application.Quit();
-			} else if(Input.GetKeyDown (KeyCode.N)){
+			} else if(Input.GetKeyDown (KeyCode.R)){
 				Application.LoadLevel(0);
 			} 
+		}
+
+		if(finish){
+			Time.timeScale = 0;
+			grayLayer.SetActive(true);
+			txtMid.text = "You Are Awesome!";
+			txtMid.transform.gameObject.SetActive(true);
 		}
 
 
 	}
 
+	public void setFinish(bool finish){
+		this.finish = finish;
+	}
 
 }

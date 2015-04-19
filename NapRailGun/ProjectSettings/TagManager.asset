@@ -9,6 +9,8 @@ TagManager:
   - Player3
   - Player4
   - notshootable
+  - Item
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -22,9 +24,9 @@ TagManager:
   - Bullets
   - Background
   - Beam
-  - 
-  - 
-  - 
+  - TombStone
+  - Portal
+  - Shield
   - 
   - 
   - 
@@ -45,6 +47,9 @@ TagManager:
   m_SortingLayers:
   - name: Background Image
     uniqueID: 402827195
+    locked: 0
+  - name: Tombstone
+    uniqueID: 1062036599
     locked: 0
   - name: Default
     uniqueID: 0

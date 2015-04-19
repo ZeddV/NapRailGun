@@ -24,6 +24,8 @@ public class EnergyBallScript : MonoBehaviour {
 				script.addEnergy(energyValue);
 			}
 
+			gameObject.GetComponent<AudioSource>().Play();
+
 			//Number stuff
 			controller.maxBalls++;
 			Destroy(gameObject);

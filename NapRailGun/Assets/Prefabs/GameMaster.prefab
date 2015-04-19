@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 428774}
   - 114: {fileID: 11431942}
+  - 114: {fileID: 11498656}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.49875355, y: .00250005722, z: 0}
+  m_LocalPosition: {x: -5, y: 9.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,10 +42,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerQuantity: 4
   pinkMode: 0
-  prefabPlayer: {fileID: 0}
+  prefabPlayer: {fileID: 162930, guid: 1a7af02e28707e84baf7f3b450a57635, type: 2}
   prefabStatus: {fileID: 130884, guid: 24c3a5abfb074554c8a14f2893b02a51, type: 2}
   canvasStatus: {fileID: 0}
   txtMid: {fileID: 0}
+  playerPosition:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  respawnScript: {fileID: 11498656}
+  tombstonePrefab: {fileID: 121256, guid: c5ab9398c0fe13248983cfe4900d01c2, type: 2}
+  tombstoneSprites:
+  - {fileID: 2800000, guid: 441e350269519104e9dae74f175c72d2, type: 3}
+  - {fileID: 2800000, guid: f950758da72093340b32204b6f455285, type: 3}
+  - {fileID: 2800000, guid: 4c3939f215feb184fbe6802ec24cdc3b, type: 3}
+  - {fileID: 2800000, guid: ec56989a47f127f42873f0273c61453f, type: 3}
+--- !u!114 &11498656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9db3b3555e7b244866b3252982fe5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPlayers: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
