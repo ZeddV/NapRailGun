@@ -27,6 +27,7 @@ GameObject:
   - 224: {fileID: 22436858}
   - 222: {fileID: 22297734}
   - 114: {fileID: 11433224}
+  - 114: {fileID: 11411028}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -157,6 +158,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11411028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5d87666d2031a40bbf864eb9b96b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthFill: {fileID: 11408840}
+  energyFill: {fileID: 11492074}
+  txtName: {fileID: 11449838}
 --- !u!114 &11433224
 MonoBehaviour:
   m_ObjectHideFlags: 1

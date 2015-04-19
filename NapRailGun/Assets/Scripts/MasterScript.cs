@@ -14,7 +14,7 @@ public class MasterScript : MonoBehaviour {
 
 	bool PlayerAuswahl = true;
 	bool finish = false; 
-	bool begin = true;
+	bool begin = !true;
 	bool timebegin = false;
 	bool pause = false;
 	float tempTime; 
