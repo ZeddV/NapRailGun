@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Weapon : MonoBehaviour {
+	public float energyCost = 20;
+
 	public float fireRate = 0;
 	public float Damage = 10;
 	public LayerMask whatToHit;
@@ -9,6 +11,7 @@ public class Weapon : MonoBehaviour {
 	public Transform bulletFlashPrefab;
 
 	public float effectSpawnRate = 1;
+	public string fireButton;
 
 	float timeToSpawnEffect = 0;
 	
@@ -19,6 +22,13 @@ public class Weapon : MonoBehaviour {
 	Vector2 shootDirection;
 	bool left;
 
+	public StatusControl statusScript;
+
+	void start()
+	{
+		statusScript = gameObject.GetComponent<PlatformerCharacter2D> ().statusScript;
+	}
+
 	// Use this for initialization
 	void Awake () {
 		Debug.Log ("Awake");
@@ -27,6 +37,8 @@ public class Weapon : MonoBehaviour {
 		if (firePoint == null) {
 			Debug.LogError ("No firePoint? WHAT?!");
 		}
+		//statusScript = gameObject.GetComponent<PlatformerCharacter2D> ().statusScript;
+		//Debug.Log ("WEAPON "+gameObject.GetComponent<PlatformerCharacter2D> ());
 	}
 	
 	// Update is called once per frame
@@ -53,13 +65,13 @@ public class Weapon : MonoBehaviour {
 
 		//Check Shoot
 		if (fireRate == 0) {
-			if (Input.GetButtonDown ("Fire1")) {
+			if (Input.GetButtonDown (fireButton)) {
 				Debug.Log ("Fire");
 				Shoot();
 			}
 		}
 		else {
-			if (Input.GetButton ("Fire1") && Time.time > timeToFire) {
+			if (Input.GetButton (fireButton) && Time.time > timeToFire) {
 				timeToFire = Time.time + 1/fireRate;
 				Shoot();
 			}
@@ -74,6 +86,11 @@ public class Weapon : MonoBehaviour {
 	}
 	
 	void Shoot () {
+		Debug.Log (statusScript);
+		if(!statusScript.subEnergy(energyCost)) 
+		{
+			return;
+		}
 
 		Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2 (firePoint.position.x, firePoint.position.y);
@@ -94,7 +111,9 @@ public class Weapon : MonoBehaviour {
 	}
 
 	void Effect(){
-		Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		Transform bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation) as Transform;
+		bullet.gameObject.GetComponent<MoveBullet> ().player = gameObject;
+		Debug.Log (bullet.gameObject.GetComponent<MoveBullet> ().player);
 		Transform effectInstanst = Instantiate(bulletFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
 		Destroy(effectInstanst.gameObject, 0.2f);
 	}
