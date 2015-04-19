@@ -17,7 +17,7 @@ public class EnergyBallScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision) {
 
-		if (collision.collider.gameObject.tag.Equals ("Player")) {
+		if (collision.collider.gameObject.tag.Contains ("Player")) {
 			//UpdatePlayer
 			StatusControl script = collision.collider.gameObject.GetComponent<PlatformerCharacter2D>().statusScript;
 			if(script != null) {

@@ -52,3 +52,6 @@ TagManager:
   - name: Beam
     uniqueID: 3754362625
     locked: 0
+  - name: Front
+    uniqueID: 3731434415
+    locked: 0

@@ -72,7 +72,7 @@ public class Weapon : MonoBehaviour {
 
 		//Check Shoot
 		if (fireRate == 0) {
-			if (Input.GetButtonDown (controlsScript.fire)) {
+			if (Input.GetButton (controlsScript.fire)) {
 					Debug.Log ("Fire");
 					Shoot();
 				}
