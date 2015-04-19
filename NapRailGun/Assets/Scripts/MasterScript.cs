@@ -42,6 +42,9 @@ public class MasterScript : MonoBehaviour {
 		if(!pinkMode){
 			pinkLayer.SetActive(false);
 		}
+
+		respawnScript.masterScript = this;
+
 		GameObject panel;
 		GameObject player;
 		Platformer2DUserControl characterControl;
@@ -66,7 +69,6 @@ public class MasterScript : MonoBehaviour {
 			characterControl.shield = "Shield"+(i+1);
 			characterControl.axisHorizontal = "Horizontal"+(i+1);
 			characterControl.axisVertical = "Vertical"+(i+1);
-
 		}
 	}
 	
@@ -124,6 +126,10 @@ public class MasterScript : MonoBehaviour {
 		}
 
 
+	}
+
+	public void setFinish(bool finish){
+		Debug.Log ("FINISH");
 	}
 
 
