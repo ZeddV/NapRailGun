@@ -27,11 +27,11 @@ public class StatusControl : MonoBehaviour {
 
 	public bool subEnergy(float sub){
 		if (energy < sub) {
-			Debug.Log("NLOSS " + energy);
+			////Debug.Log("NLOSS " + energy);
 			return false;
 		}
 		energy -= sub;
-		Debug.Log("LOSS " + energy);
+
 		energyFill.fillAmount = (1f/100f)*this.energy;
 
 		return true;
@@ -42,30 +42,43 @@ public class StatusControl : MonoBehaviour {
 		this.energy += energy;
 		if(this.energy > 100){
 			this.energy = 100;
-			Debug.Log("NADD " + energy);
+			//Debug.Log("NADD " + energy);
 			ret = false;
 		} else {
-			Debug.Log("ADD " + energy);
+			//Debug.Log("ADD " + energy);
 		}
 
 		energyFill.fillAmount = (1f/100f)*this.energy;
 		return ret;
 	}
 
-	void subHealth(float health){
+	public void subHealth(float health){
 		this.health -= health;
-		if(this.health < 0){
+		if(this.health <= 0){
 			this.health = 0;
+			
 		}
 		healthFill.fillAmount = (1f/100f)*this.health;
 	}
 	
-	void addHealth(float health){
+	public void addHealth(float health){
 		this.health += health;
 		if(this.health > 100){
 			this.health = 100;
 		}
 		healthFill.fillAmount = (1f/100f)*this.health;
+	}
+
+	public void die(RespawnScript respawnScript, GameObject tombstonePrefab) {
+		respawnScript.change (-1);
+		
+		GameObject tombStone = Instantiate (tombstonePrefab, transform.position, transform.rotation) as GameObject;
+		TombStoneScript script = tombStone.GetComponent<TombStoneScript> ();
+		script.player = gameObject;
+		script.respawnScript = respawnScript;
+		script.work ();
+		
+		gameObject.SetActive (false);
 	}
 
 	float getHealth() {
