@@ -29,7 +29,10 @@ public class MoveBullet : MonoBehaviour {
 			StatusControl status = collision.transform.GetComponent<PlatformerCharacter2D> ().statusScript;
 			if (status != null) {
 				Debug.Log ("DAMAGE!: " + damage);
-				status.subHealth (damage);
+				if (!status.subHealth (damage)) {
+					collision.transform.GetComponent<PlatformerCharacter2D> ().die();
+				}
+
 			}
 			Destroy(gameObject);
 		} else if (collision.transform.tag.Equals ("Shield")) {

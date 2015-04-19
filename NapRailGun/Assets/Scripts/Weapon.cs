@@ -90,6 +90,7 @@ public class Weapon : MonoBehaviour {
 		//Debug.Log ("Hitpoint: "+hit.point);
 		beam.SetPosition(0, firePoint.position);
 		beam.SetPosition(1, hit.point);
+		beam.sortingLayerName = "UI";
 	}
 	
 	void Shoot () {

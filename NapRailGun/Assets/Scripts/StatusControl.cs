@@ -52,13 +52,15 @@ public class StatusControl : MonoBehaviour {
 		return ret;
 	}
 
-	public void subHealth(float health){
+	public bool subHealth(float health){
 		this.health -= health;
 		if(this.health <= 0){
 			this.health = 0;
-			
+			healthFill.fillAmount = (1f/100f)*this.health;
+			return false;
 		}
 		healthFill.fillAmount = (1f/100f)*this.health;
+		return true;
 	}
 	
 	public void addHealth(float health){

@@ -63,6 +63,7 @@ GameObject:
   - 60: {fileID: 6015092}
   - 114: {fileID: 11477756}
   - 82: {fileID: 8264224}
+  - 114: {fileID: 11487240}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -374,7 +375,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 260329a85eaa753408014df29c1c1ab2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -542,6 +543,9 @@ MonoBehaviour:
   m_Grounded: 0
   m_SideCollisionRight: 0
   m_SideCollisionLeft: 0
+  tombstonePrefab: {fileID: 121256, guid: c5ab9398c0fe13248983cfe4900d01c2, type: 2}
+  tombstoneTexture: {fileID: 0}
+  respawnScript: {fileID: 0}
 --- !u!114 &11472964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -570,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyCost: 20
-  fireRate: 100000
+  fireRate: 2
   Damage: 10
   whatToHit:
     serializedVersion: 2
@@ -579,7 +583,22 @@ MonoBehaviour:
   bulletFlashPrefab: {fileID: 421736, guid: 13151c5737b12074ab91df2962348f6e, type: 2}
   effectSpawnRate: 10
   fireButton: Fire2
+  shootDirection: {x: 0, y: 0}
   statusScript: {fileID: 0}
+  controlsScript: {fileID: 0}
+--- !u!114 &11487240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9db3b3555e7b244866b3252982fe5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterScript: {fileID: 0}
+  numPlayers: 4
 --- !u!120 &12093354
 LineRenderer:
   m_ObjectHideFlags: 1

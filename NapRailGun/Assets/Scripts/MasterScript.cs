@@ -4,7 +4,7 @@ using System.Collections;
 
 public class MasterScript : MonoBehaviour {
 
-	public int playerQuantity = 4;
+	public int playerQuantity = 2;
 	public bool pinkMode = false;
 	public GameObject prefabPlayer;
 	public GameObject prefabStatus;
@@ -31,6 +31,9 @@ public class MasterScript : MonoBehaviour {
 	public GameObject tombstonePrefab;
 	public Texture2D[] tombstoneSprites;
 
+	public RuntimeAnimatorController redContr;
+	public RuntimeAnimatorController greenContr;
+
 	// Use this for initialization
 	void Start () {
 		playerStatusPosition[0] = new Vector3(-681.5f, -129.6f, 0);
@@ -56,9 +59,16 @@ public class MasterScript : MonoBehaviour {
 
 			player = Instantiate(prefabPlayer, playerPosition[i].position, playerPosition[i].rotation) as GameObject;
 			player.GetComponent<PlatformerCharacter2D>().setStatusControl(panel);
+			RuntimeAnimatorController controller;
+			if(i == 0) {
+				player.GetComponent<Animator>().runtimeAnimatorController = redContr;
+			} else if(i == 1) {
+				player.GetComponent<Animator>().runtimeAnimatorController = greenContr;
+			}
+ 
 
 			player.GetComponent<PlatformerCharacter2D>().tombstonePrefab = tombstonePrefab;
-			player.GetComponent<PlatformerCharacter2D>().tombstoneTexture = tombstoneSprites[i];
+			//player.GetComponent<PlatformerCharacter2D>().tombstoneTexture = tombstoneSprites[i];
 			player.GetComponent<PlatformerCharacter2D>().respawnScript = this.respawnScript;
 			player.tag = "Player"+(i+1);
 
