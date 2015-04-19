@@ -19,8 +19,8 @@ public class MoveBullet : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D collision) {
-		Debug.Log (player);
-		Debug.Log (collision.gameObject.GetComponentInParent<Transform>().gameObject.name);
+		//Debug.Log (player);
+		//Debug.Log (collision.gameObject.GetComponentInParent<Transform>().gameObject.name);
 		if (!(collision.gameObject == gameObject || collision.gameObject == collision.gameObject.GetComponentInParent<Transform>().gameObject)) {
 			Destroy (gameObject);
 		}	

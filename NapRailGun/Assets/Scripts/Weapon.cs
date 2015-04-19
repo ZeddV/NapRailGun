@@ -24,14 +24,14 @@ public class Weapon : MonoBehaviour {
 
 	public StatusControl statusScript;
 
-	void start()
+	void Start()
 	{
 		statusScript = gameObject.GetComponent<PlatformerCharacter2D> ().statusScript;
 	}
 
 	// Use this for initialization
 	void Awake () {
-		Debug.Log ("Awake");
+		//Debug.Log ("Awake");
 		beam = transform.Find("FirePoint/Beam").GetComponent<LineRenderer>();
 		firePoint = transform.FindChild ("FirePoint");
 		if (firePoint == null) {
@@ -86,7 +86,7 @@ public class Weapon : MonoBehaviour {
 	}
 	
 	void Shoot () {
-		Debug.Log (statusScript);
+		//Debug.Log (statusScript);
 		if(!statusScript.subEnergy(energyCost)) 
 		{
 			return;
@@ -94,7 +94,7 @@ public class Weapon : MonoBehaviour {
 
 		Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2 (firePoint.position.x, firePoint.position.y);
-		Debug.Log ("direction"+(mousePosition-firePointPosition));
+		//Debug.Log ("direction"+(mousePosition-firePointPosition));
 		//direction = mousePosition-firePointPosition for mouse
 		RaycastHit2D hit = Physics2D.Raycast (firePointPosition, shootDirection, 100);
 
@@ -113,7 +113,7 @@ public class Weapon : MonoBehaviour {
 	void Effect(){
 		Transform bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation) as Transform;
 		bullet.gameObject.GetComponent<MoveBullet> ().player = gameObject;
-		Debug.Log (bullet.gameObject.GetComponent<MoveBullet> ().player);
+		//Debug.Log (bullet.gameObject.GetComponent<MoveBullet> ().player);
 		Transform effectInstanst = Instantiate(bulletFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
 		Destroy(effectInstanst.gameObject, 0.2f);
 	}

@@ -28,6 +28,10 @@ using UnityEngine;
 
 		private Transform m_Shield;
 
+		public GameObject tombstonePrefab;
+		public Texture2D tombstoneTexture;
+		public RespawnScript respawnScript;
+
         private void Awake()
         {
             // Setting up references.
@@ -40,6 +44,8 @@ using UnityEngine;
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 			m_Shield = transform.Find ("Shield");
+
+			//Invoke ("die", 5f);
         }
 
 
@@ -154,20 +160,21 @@ using UnityEngine;
                 }
                 */
             }
-
-			if (move < 0)	
+		if(m_Anim != null && m_Anim.isActiveAndEnabled) {
+			if (move < 0)	{
 				m_Anim.SetInteger ("IsMoving", 1);
-			else if (move > 0)
+			}else if (move > 0){
 				m_Anim.SetInteger ("IsMoving", 2);
-			else
+			}else{
 				m_Anim.SetInteger("IsMoving",0);
-
-			Debug.Log(m_Anim.GetInteger("IsMoving"));
+			}
+		}
+			//Debug.Log(m_Anim.GetInteger("IsMoving"));
             // If the player should jump...
 
             if (m_Grounded && jump)// && m_Anim.GetBool("Ground"))
             {
-                Debug.Log("JUMP!");
+                //Debug.Log("JUMP!");
                 // Add a vertical force to the player.
 				
 			gameObject.GetComponent<AudioSource>().Play();
@@ -187,6 +194,19 @@ using UnityEngine;
 			Debug.Log ("StatusControl");
 			this.statusControl = statusControl;
 			this.statusScript = statusControl.GetComponent<StatusControl>();
+		}
+
+		public void die(){
+			respawnScript.numPlayers = respawnScript.numPlayers - 1;
+			
+			GameObject tombStone = Instantiate(tombstonePrefab,transform.position, transform.rotation) as GameObject;
+			TombStoneScript script = tombStone.GetComponent<TombStoneScript> ();
+			script.player = gameObject;
+			script.respawnScript = respawnScript;
+			script.respawnScript = respawnScript;
+			script.work ();
+
+			gameObject.SetActive (false);
 		}
 
 		/*

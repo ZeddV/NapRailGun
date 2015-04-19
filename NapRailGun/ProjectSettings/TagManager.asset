@@ -18,8 +18,8 @@ TagManager:
   - Bullets
   - Background
   - Beam
-  - 
-  - 
+  - TombStone
+  - Portal
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Background Image
     uniqueID: 402827195
+    locked: 0
+  - name: Tombstone
+    uniqueID: 1062036599
     locked: 0
   - name: Default
     uniqueID: 0

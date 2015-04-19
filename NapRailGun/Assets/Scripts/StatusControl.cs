@@ -27,11 +27,11 @@ public class StatusControl : MonoBehaviour {
 
 	public bool subEnergy(float sub){
 		if (energy < sub) {
-			Debug.Log("NLOSS " + energy);
+			////Debug.Log("NLOSS " + energy);
 			return false;
 		}
 		energy -= sub;
-		Debug.Log("LOSS " + energy);
+		//Debug.Log("LOSS " + energy);
 		energyFill.fillAmount = (1f/100f)*this.energy;
 
 		return true;
@@ -42,10 +42,10 @@ public class StatusControl : MonoBehaviour {
 		this.energy += energy;
 		if(this.energy > 100){
 			this.energy = 100;
-			Debug.Log("NADD " + energy);
+			//Debug.Log("NADD " + energy);
 			ret = false;
 		} else {
-			Debug.Log("ADD " + energy);
+			//Debug.Log("ADD " + energy);
 		}
 
 		energyFill.fillAmount = (1f/100f)*this.energy;
