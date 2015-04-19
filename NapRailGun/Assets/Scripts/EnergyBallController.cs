@@ -23,7 +23,7 @@ public class EnergyBallController : MonoBehaviour {
 
 	IEnumerable Timer(){
 		while (true) {
-			Debug.Log ("INIT");
+			//Debug.Log ("INIT");
 
 			 //yield return new WaitForSeconds(3f);
 			Invoke("createBalls", Random.Range(3f, 5f));
@@ -33,12 +33,12 @@ public class EnergyBallController : MonoBehaviour {
 
 	/*void initializeTiles ()
 	{
-		Debug.Log ("INIT");
+		//Debug.Log ("INIT");
 
 		GameObject[] allObjects =  Object.FindObjectsOfType <GameObject>();
 		foreach(GameObject obj in allObjects) {
 			if (obj.layer == 8 && (obj.GetComponent<BoxCollider2D>() != null || obj.GetComponent<PolygonCollider2D>())) {
-				Debug.Log("Layer " +obj);
+				statusScript.Log("Layer " +obj);
 				tiles.Add(obj);
 			}
 		}
@@ -47,7 +47,7 @@ public class EnergyBallController : MonoBehaviour {
 	
 	void createBalls ()
 	{
-//		Debug.Log ("BALLS");
+
 		/*if (!initialized) {
 			initializeTiles ();
 			initialized = true;
@@ -65,11 +65,11 @@ public class EnergyBallController : MonoBehaviour {
 			GameObject obj = Instantiate(prefab, position, transform.rotation) as GameObject;
 			obj.GetComponent<EnergyBallScript>().controller = this;
 			obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(100*Mathf.Sign(Random.Range(1,1)), 0));
-			//Debug.Log(obj.GetComponent<EnergyBallScript>().controller);
+			////Debug.Log(obj.GetComponent<EnergyBallScript>().controller);
 			maxBalls--;
 
 		}
-//		Debug.Log ("Repeat");
+
 		Invoke("createBalls", Random.Range(3f, 5f));
 
 	}

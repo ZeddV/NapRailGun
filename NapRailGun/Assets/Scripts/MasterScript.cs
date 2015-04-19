@@ -27,6 +27,10 @@ public class MasterScript : MonoBehaviour {
 	Vector3[] playerStatusPosition = new Vector3[4];
 	public Transform[] playerPosition;
 
+	public RespawnScript respawnScript;
+	public GameObject tombstonePrefab;
+	public Texture2D[] tombstoneSprites;
+
 	// Use this for initialization
 	void Start () {
 		playerStatusPosition[0] = new Vector3(-681.5f, -129.6f, 0);
@@ -38,6 +42,9 @@ public class MasterScript : MonoBehaviour {
 		if(!pinkMode && pinkLayer != null){
 			pinkLayer.SetActive(false);
 		}
+
+		respawnScript.masterScript = this;
+
 		GameObject panel;
 		GameObject player;
 		Platformer2DUserControl characterControl;
@@ -49,7 +56,12 @@ public class MasterScript : MonoBehaviour {
 
 			player = Instantiate(prefabPlayer, playerPosition[i].position, playerPosition[i].rotation) as GameObject;
 			player.GetComponent<PlatformerCharacter2D>().setStatusControl(panel);
+
+			player.GetComponent<PlatformerCharacter2D>().tombstonePrefab = tombstonePrefab;
+			player.GetComponent<PlatformerCharacter2D>().tombstoneTexture = tombstoneSprites[i];
+			player.GetComponent<PlatformerCharacter2D>().respawnScript = this.respawnScript;
 			player.tag = "Player"+(i+1);
+
 
 			characterControl = player.GetComponent<Platformer2DUserControl>();
 			characterControl.jump = "Jump"+(i+1);
@@ -57,7 +69,6 @@ public class MasterScript : MonoBehaviour {
 			characterControl.shield = "Shield"+(i+1);
 			characterControl.axisHorizontal = "Horizontal"+(i+1);
 			characterControl.axisVertical = "Vertical"+(i+1);
-
 		}
 	}
 	
@@ -128,6 +139,5 @@ public class MasterScript : MonoBehaviour {
 	public void setFinish(bool finish){
 		this.finish = finish;
 	}
-
 
 }
