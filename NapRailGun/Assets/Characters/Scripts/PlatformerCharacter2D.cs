@@ -203,7 +203,6 @@ using UnityEngine;
 			TombStoneScript script = tombStone.GetComponent<TombStoneScript> ();
 			script.player = gameObject;
 			script.respawnScript = respawnScript;
-			script.respawnScript = respawnScript;
 			script.work ();
 
 			gameObject.SetActive (false);
