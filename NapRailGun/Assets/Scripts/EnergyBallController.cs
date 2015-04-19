@@ -47,7 +47,11 @@ public class EnergyBallController : MonoBehaviour {
 	
 	void createBalls ()
 	{
+<<<<<<< HEAD
 		//Debug.Log ("BALLS");
+=======
+//		Debug.Log ("BALLS");
+>>>>>>> 69c98855cc8063c270f1aa8cd1998f5ad9269ecb
 		/*if (!initialized) {
 			initializeTiles ();
 			initialized = true;
@@ -69,7 +73,7 @@ public class EnergyBallController : MonoBehaviour {
 			maxBalls--;
 
 		}
-		//Debug.Log ("Repeat");
+
 		Invoke("createBalls", Random.Range(3f, 5f));
 
 	}

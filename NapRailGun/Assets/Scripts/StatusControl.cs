@@ -31,7 +31,7 @@ public class StatusControl : MonoBehaviour {
 			return false;
 		}
 		energy -= sub;
-		//Debug.Log("LOSS " + energy);
+
 		energyFill.fillAmount = (1f/100f)*this.energy;
 
 		return true;
@@ -52,7 +52,7 @@ public class StatusControl : MonoBehaviour {
 		return ret;
 	}
 
-	void subHealth(float health){
+	public void subHealth(float health){
 		this.health -= health;
 		if(this.health < 0){
 			this.health = 0;
@@ -60,7 +60,7 @@ public class StatusControl : MonoBehaviour {
 		healthFill.fillAmount = (1f/100f)*this.health;
 	}
 	
-	void addHealth(float health){
+	public void addHealth(float health){
 		this.health += health;
 		if(this.health > 100){
 			this.health = 100;

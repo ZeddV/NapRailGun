@@ -53,9 +53,12 @@ public class MasterScript : MonoBehaviour {
 
 			player = Instantiate(prefabPlayer, playerPosition[i].position, playerPosition[i].rotation) as GameObject;
 			player.GetComponent<PlatformerCharacter2D>().setStatusControl(panel);
+
 			player.GetComponent<PlatformerCharacter2D>().tombstonePrefab = tombstonePrefab;
 			player.GetComponent<PlatformerCharacter2D>().tombstoneTexture = tombstoneSprites[i];
 			player.GetComponent<PlatformerCharacter2D>().respawnScript = this.respawnScript;
+			player.tag = "Player"+(i+1);
+
 
 			characterControl = player.GetComponent<Platformer2DUserControl>();
 			characterControl.jump = "Jump"+(i+1);
@@ -112,6 +115,13 @@ public class MasterScript : MonoBehaviour {
 			}
 		}
 
+		if(pause){
+			if(Input.GetKeyDown (KeyCode.Q)){
+				Application.Quit();
+			} else if(Input.GetKeyDown (KeyCode.N)){
+				Application.LoadLevel(0);
+			} 
+		}
 
 
 	}

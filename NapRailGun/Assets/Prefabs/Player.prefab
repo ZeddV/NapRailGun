@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 467520}
   m_Layer: 2
   m_Name: RightCheck
-  m_TagString: Untagged
+  m_TagString: notshootable
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +25,7 @@ GameObject:
   - 4: {fileID: 407238}
   m_Layer: 2
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: notshootable
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - 4: {fileID: 415212}
   m_Layer: 2
   m_Name: CeilingCheck
-  m_TagString: Untagged
+  m_TagString: notshootable
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,6 @@ GameObject:
   - 60: {fileID: 6015092}
   - 114: {fileID: 11477756}
   - 82: {fileID: 8264224}
-  - 58: {fileID: 5881026}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -81,7 +80,7 @@ GameObject:
   - 4: {fileID: 450256}
   m_Layer: 2
   m_Name: LeftCheck
-  m_TagString: Untagged
+  m_TagString: notshootable
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +96,7 @@ GameObject:
   - 120: {fileID: 12093354}
   m_Layer: 11
   m_Name: Beam
-  m_TagString: Untagged
+  m_TagString: notshootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +113,7 @@ GameObject:
   - 82: {fileID: 8220946}
   m_Layer: 2
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: notshootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +129,7 @@ GameObject:
   - 82: {fileID: 8290762}
   m_Layer: 2
   m_Name: FirePoint
-  m_TagString: Untagged
+  m_TagString: notshootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,8 +225,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162930}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: -1.62920685e-07}
+  m_LocalPosition: {x: 14, y: -8, z: 0}
   m_LocalScale: {x: .779999971, y: 1, z: 1}
   m_Children:
   - {fileID: 407238}
@@ -266,19 +265,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -.689999998}
   serializedVersion: 2
   m_Radius: .439999998
---- !u!58 &5881026
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 162930}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: .699999988}
-  serializedVersion: 2
-  m_Radius: .400000006
 --- !u!60 &6015092
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -523,7 +509,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162930}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -556,7 +542,6 @@ MonoBehaviour:
   m_Grounded: 0
   m_SideCollisionRight: 0
   m_SideCollisionLeft: 0
-  tombstonePrefab: {fileID: 121256, guid: c5ab9398c0fe13248983cfe4900d01c2, type: 2}
 --- !u!114 &11472964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -595,6 +580,7 @@ MonoBehaviour:
   effectSpawnRate: 10
   fireButton: Fire2
   statusScript: {fileID: 0}
+  controlsScript: {fileID: 0}
 --- !u!120 &12093354
 LineRenderer:
   m_ObjectHideFlags: 1
