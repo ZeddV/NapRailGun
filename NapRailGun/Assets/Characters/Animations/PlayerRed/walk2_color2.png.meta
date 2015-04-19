@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: d2327197b8cdf924d9f2d33fa6532e56
+timeCreated: 1429443707
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: walk2_color2_0
+    21300002: walk2_color2_1
+    21300004: walk2_color2_2
+    21300006: walk2_color2_3
+    21300008: walk2_color2_4
+    21300010: walk2_color2_5
+    21300012: walk2_color2_6
+    21300014: walk2_color2_7
+    21300016: walk2_color2_8
+    21300018: walk2_color2_9
+    21300020: walk2_color2_10
+    21300022: walk2_color2_11
+    21300024: walk2_color2_12
+    21300026: walk2_color2_13
+    21300028: walk2_color2_14
+    21300030: walk2_color2_15
+    21300032: walk2_color2_16
+    21300034: walk2_color2_17
+    21300036: walk2_color2_18
+    21300038: walk2_color2_19
+    21300040: walk2_color2_20
+    21300042: walk2_color2_21
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: walk2_color2_0
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 616
+        width: 205
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_1
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 621
+        width: 169
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_2
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 629
+        width: 217
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_3
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 628
+        width: 237
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_4
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 630
+        width: 168
+        height: 341
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_5
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 630
+        width: 167
+        height: 359
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 814
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_7
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 810
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_8
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 363
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_9
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 170
+        width: 205
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_10
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 170
+        width: 169
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_11
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 177
+        width: 217
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_12
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 177
+        width: 233
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_13
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 363
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_14
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 189
+        width: 169
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_15
+      rect:
+        serializedVersion: 2
+        x: 1869
+        y: 178
+        width: 162
+        height: 364
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 619
+        width: 186
+        height: 362
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_17
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 621
+        width: 217
+        height: 352
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_18
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 625
+        width: 234
+        height: 350
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 171
+        width: 183
+        height: 358
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_20
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 182
+        width: 221
+        height: 341
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk2_color2_21
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 178
+        width: 236
+        height: 351
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -45,5 +45,8 @@ using UnityEngine;
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump, m_Shield);
             m_Jump = false;
+
+			float v = Input.GetAxis (axisVertical);
+			m_Character.playAnimVert (v,h);
         }
     }

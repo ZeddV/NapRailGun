@@ -155,14 +155,12 @@ using UnityEngine;
                 */
             }
 
-			if (move < 0)	
+			if (move < 0) 
 				m_Anim.SetInteger ("IsMoving", 1);
-			else if (move > 0)
-				m_Anim.SetInteger ("IsMoving", 2);
-			else
-				m_Anim.SetInteger("IsMoving",0);
-
-			Debug.Log(m_Anim.GetInteger("IsMoving"));
+			else if (move > 0) 
+					m_Anim.SetInteger ("IsMoving", 2);
+			else 
+				m_Anim.SetInteger ("IsMoving", 0);
             // If the player should jump...
 
             if (m_Grounded && jump)// && m_Anim.GetBool("Ground"))
@@ -187,6 +185,16 @@ using UnityEngine;
 			Debug.Log ("StatusControl");
 			this.statusControl = statusControl;
 			this.statusScript = statusControl.GetComponent<StatusControl>();
+		}
+
+		public void playAnimVert(float v,float h){
+				if (v > 0) {
+				m_Anim.SetInteger ("Vertical", 1);
+			} else if (v < 0) {
+				m_Anim.SetInteger ("Vertical", 2);
+			} else
+				m_Anim.SetInteger ("Vertical", 0);
+		
 		}
 
 		/*
