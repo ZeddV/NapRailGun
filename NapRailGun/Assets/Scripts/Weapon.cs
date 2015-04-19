@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class Weapon : MonoBehaviour {
+	public float energyCost = 20;
+
 	public float fireRate = 0;
 	public float Damage = 10;
 	public LayerMask whatToHit;
@@ -20,6 +22,13 @@ public class Weapon : MonoBehaviour {
 	Vector2 shootDirection;
 	bool left;
 
+	public StatusControl statusScript;
+
+	void start()
+	{
+		statusScript = gameObject.GetComponent<PlatformerCharacter2D> ().statusScript;
+	}
+
 	// Use this for initialization
 	void Awake () {
 		Debug.Log ("Awake");
@@ -28,6 +37,8 @@ public class Weapon : MonoBehaviour {
 		if (firePoint == null) {
 			Debug.LogError ("No firePoint? WHAT?!");
 		}
+		//statusScript = gameObject.GetComponent<PlatformerCharacter2D> ().statusScript;
+		//Debug.Log ("WEAPON "+gameObject.GetComponent<PlatformerCharacter2D> ());
 	}
 	
 	// Update is called once per frame
@@ -75,6 +86,11 @@ public class Weapon : MonoBehaviour {
 	}
 	
 	void Shoot () {
+		Debug.Log (statusScript);
+		if(!statusScript.subEnergy(energyCost)) 
+		{
+			return;
+		}
 
 		Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 		Vector2 firePointPosition = new Vector2 (firePoint.position.x, firePoint.position.y);

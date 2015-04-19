@@ -47,12 +47,12 @@ public class PortalScript : MonoBehaviour {
 			return;
 
 		linkedPortalScript = linkedPortal.GetComponent<PortalScript> ();
-		//Debug.Log ("LPS " + linkedPortalScript);
+		////Debug.Log ("LPS " + linkedPortalScript);
 		//scaledLinkedDirection = linkedDirection * 0.55f;
 
 
 
-		//Debug.Log (direction);
+		////Debug.Log (direction);
 	}
 	
 	// Update is called once per frame
@@ -67,7 +67,7 @@ public class PortalScript : MonoBehaviour {
 		if (!active)
 			return;
 
-		Debug.Log ("Coll");
+		//Debug.Log ("Coll");
 		linkedDirection = linkedPortalScript.getExitDirection();
 
 		GameObject player = collider.gameObject;
@@ -75,7 +75,7 @@ public class PortalScript : MonoBehaviour {
 		Vector3 velocity = player.GetComponent<Rigidbody2D> ().velocity;
 		Vector3 offsetVector = playerPosition - transform.position;
 
-		Debug.Log ("V " + velocity);
+		//Debug.Log ("V " + velocity);
 
 		
 		float velInMain = 0, velInSec = 0;
@@ -112,23 +112,23 @@ public class PortalScript : MonoBehaviour {
 			offInMain = -offsetVector.y;
 			break;		
 		}
-		Debug.Log (offInMain);
+		//Debug.Log (offInMain);
 
 
 		
 		Vector3 linkedPosition = linkedPortal.transform.position;
-		float boundsX = player.GetComponent<SpriteRenderer>().bounds.size.x / 2 * 1.05f;
+		float boundsX = player.GetComponent<SpriteRenderer>().bounds.size.x / 2 * 1.1f;
 		float boundsY = player.GetComponent<SpriteRenderer>().bounds.size.y / 2 * 1.05f;
 
 		float posX = linkedPosition.x;
 		float posY = linkedPosition.y;
-		//Debug.Log (posY);
+		////Debug.Log (posY);
 		float posZ = linkedPosition.z;
 
-		//Debug.Log (velocity);
+		////Debug.Log (velocity);
 
 		offInMain *= 1.05f;
-		Debug.Log ("1 "+player.transform.position);
+		//Debug.Log ("1 "+player.transform.position);
 		switch (linkedDirection) {
 		case Direction.LEFT:
 			posY += offsetVector.y;
@@ -176,10 +176,10 @@ public class PortalScript : MonoBehaviour {
 			break;		
 		}
 
-		Debug.Log ("2 " + player.transform.position);
+		//Debug.Log ("2 " + player.transform.position);
 
 		player.GetComponent<Rigidbody2D> ().velocity = velocity;
-		//Debug.Log (velocity);
+		////Debug.Log (velocity);
 
 		
 	}
@@ -190,9 +190,9 @@ public class PortalScript : MonoBehaviour {
 			return;
 
 		linkedDirection = linkedPortalScript.getDirection();
-		//Debug.Log ("LDS " +linkedDirection);
+		////Debug.Log ("LDS " +linkedDirection);
 
-		Debug.Log (collider.gameObject.name);
+		//Debug.Log (collider.gameObject.name);
 		GameObject player = collider.gameObject;
 
 		Vector3 scaledBoundsSize = new Vector3 (
@@ -201,7 +201,7 @@ public class PortalScript : MonoBehaviour {
 			collider.bounds.size.z
 			);
 		scaledBoundsSize.Scale (scaledLinkedDirection);
-		//Debug.Log ("SBS " +scaledBoundsSize);
+		////Debug.Log ("SBS " +scaledBoundsSize);
 
 		Vector3 offset = transform.position - player.transform.position;
 
@@ -211,16 +211,16 @@ public class PortalScript : MonoBehaviour {
 
 
 
-		//Debug.Log (
+		////Debug.Log (
 
 		Vector3 destination = linkedPortal.transform.position + scaledBoundsSize - offset;
-		//Debug.Log (destination);
+		////Debug.Log (destination);
 
-		//Debug.Log ("Setting position...");
+		////Debug.Log ("Setting position...");
 
 		player.transform.position = destination; //destination.x, destination.y, destination.z);
 
-		//Debug.Log ("Changing direction...");
+		////Debug.Log ("Changing direction...");
 
 		changeDirection (player.GetComponent<Rigidbody2D> ().velocity, linkedDirection);
 

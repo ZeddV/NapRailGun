@@ -27,9 +27,11 @@ using UnityEngine;
                 // Read the jump input in Update so button presses aren't missed.
 			m_Jump = Input.GetButtonDown(jump);
             }
+			
 		if (Input.GetButtonDown (shield)) {
 				m_Shield = true;
 		} else if (Input.GetButtonUp (shield)) {
+
 				m_Shield = false;
 			}
         }

@@ -3,6 +3,9 @@ using UnityEngine;
 
     public class PlatformerCharacter2D : MonoBehaviour
     {
+		public GameObject statusControl;
+		public StatusControl statusScript;
+
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -152,17 +155,16 @@ using UnityEngine;
                 */
             }
 
-			/*if (move < 0)	
+			if (move < 0)	
 				m_Anim.SetInteger ("IsMoving", 1);
 			else if (move > 0)
 				m_Anim.SetInteger ("IsMoving", 2);
 			else
 				m_Anim.SetInteger("IsMoving",0);
-			
-			Debug.Log(m_Anim.GetInteger("IsMoving"));
 
-*/
-		// If the player should jump...
+			Debug.Log(m_Anim.GetInteger("IsMoving"));
+            // If the player should jump...
+
             if (m_Grounded && jump)// && m_Anim.GetBool("Ground"))
             {
                 Debug.Log("JUMP!");
@@ -180,7 +182,12 @@ using UnityEngine;
 				m_Shield.GetComponent<SpriteRenderer> ().enabled = false;
         }
 
-		
+		public void setStatusControl(GameObject statusControl){
+			
+			Debug.Log ("StatusControl");
+			this.statusControl = statusControl;
+			this.statusScript = statusControl.GetComponent<StatusControl>();
+		}
 
 		/*
         private void Flip()

@@ -226,7 +226,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.98000002, y: 2.25999999, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .779999971, y: 1, z: 1}
   m_Children:
   - {fileID: 407238}
@@ -250,7 +250,7 @@ Rigidbody2D:
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 1
 --- !u!58 &5832576
 CircleCollider2D:
@@ -530,6 +530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8f63b19e67a5941a93bfac10b5550a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusControl: {fileID: 0}
+  statusScript: {fileID: 0}
   m_MaxSpeed: 40
   m_JumpForce: 1100
   m_CrouchSpeed: .360000014
@@ -567,7 +569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50185664510b4ba4590ff31c13512939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  energyCost: 20
+  fireRate: 100000
   Damage: 10
   whatToHit:
     serializedVersion: 2
