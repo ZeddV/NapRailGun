@@ -54,8 +54,9 @@ public class StatusControl : MonoBehaviour {
 
 	public void subHealth(float health){
 		this.health -= health;
-		if(this.health < 0){
+		if(this.health <= 0){
 			this.health = 0;
+			
 		}
 		healthFill.fillAmount = (1f/100f)*this.health;
 	}
@@ -66,6 +67,18 @@ public class StatusControl : MonoBehaviour {
 			this.health = 100;
 		}
 		healthFill.fillAmount = (1f/100f)*this.health;
+	}
+
+	public void die(RespawnScript respawnScript, GameObject tombstonePrefab) {
+		respawnScript.change (-1);
+		
+		GameObject tombStone = Instantiate (tombstonePrefab, transform.position, transform.rotation) as GameObject;
+		TombStoneScript script = tombStone.GetComponent<TombStoneScript> ();
+		script.player = gameObject;
+		script.respawnScript = respawnScript;
+		script.work ();
+		
+		gameObject.SetActive (false);
 	}
 
 	float getHealth() {

@@ -9,6 +9,8 @@ TagManager:
   - Player3
   - Player4
   - notshootable
+  - Item
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Beam
   - TombStone
   - Portal
-  - 
+  - Shield
   - 
   - 
   - 

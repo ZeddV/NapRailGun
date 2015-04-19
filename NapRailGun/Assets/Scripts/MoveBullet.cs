@@ -23,15 +23,21 @@ public class MoveBullet : MonoBehaviour {
 		//Debug.Log (transform.tag+" "+transform.name+"COLLISION WITH: "+collision.transform.tag);
 		//Debug.Log ("Player: "+player.name);
 		//Debug.Log (""+collision.gameObject.GetComponentInParent<Transform>().gameObject.name);
-		if (collision.transform.tag != transform.tag && collision.transform.tag != player.tag) {
-			Debug.Log ("TREFFER!"+collision.transform.name+" "+collision.transform.tag);
-			StatusControl status = collision.transform.GetComponent<PlatformerCharacter2D>().statusScript;
-			if(status != null){
-				Debug.Log("DAMAGE!: "+damage);
-				status.subHealth(damage);
+
+		if (collision.transform.tag != transform.tag && collision.transform.tag != player.tag && collision.transform.tag.Contains("Player")) {
+			Debug.Log ("TREFFER!" + collision.transform.name + " " + collision.transform.tag);
+			StatusControl status = collision.transform.GetComponent<PlatformerCharacter2D> ().statusScript;
+			if (status != null) {
+				Debug.Log ("DAMAGE!: " + damage);
+				status.subHealth (damage);
 			}
-			Destroy (gameObject);
-		}	
+			Destroy(gameObject);
+		} else if (collision.transform.tag.Equals ("Shield")) {
+			Debug.Log ("SHIELD!");
+		} else if (collision.transform.tag != player.tag) {
+			Destroy(gameObject);
+		}
+
 
 	}
 }

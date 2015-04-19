@@ -45,7 +45,7 @@ using UnityEngine;
 
 			m_Shield = transform.Find ("Shield");
 
-			Invoke ("die", 2f);
+			//Invoke ("die", 2f);
         }
 
 
@@ -197,15 +197,7 @@ using UnityEngine;
 		}
 
 		public void die(){
-		respawnScript.change (-1);
-			
-			GameObject tombStone = Instantiate(tombstonePrefab,transform.position, transform.rotation) as GameObject;
-			TombStoneScript script = tombStone.GetComponent<TombStoneScript> ();
-			script.player = gameObject;
-			script.respawnScript = respawnScript;
-			script.work ();
-
-			gameObject.SetActive (false);
+			statusScript.die (respawnScript, tombstonePrefab);
 		}
 
 		/*
