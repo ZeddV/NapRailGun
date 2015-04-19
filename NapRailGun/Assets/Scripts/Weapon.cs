@@ -19,7 +19,7 @@ public class Weapon : MonoBehaviour {
 	Transform firePoint;
 	LineRenderer beam;
 
-	Vector2 shootDirection;
+	public Vector2 shootDirection;
 	bool left;
 
 	public StatusControl statusScript;
