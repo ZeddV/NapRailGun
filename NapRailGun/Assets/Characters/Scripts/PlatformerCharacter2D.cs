@@ -155,17 +155,16 @@ using UnityEngine;
                 */
             }
 
-			/*if (move < 0)	
+			if (move < 0)	
 				m_Anim.SetInteger ("IsMoving", 1);
 			else if (move > 0)
 				m_Anim.SetInteger ("IsMoving", 2);
 			else
 				m_Anim.SetInteger("IsMoving",0);
-			
-			Debug.Log(m_Anim.GetInteger("IsMoving"));
 
-*/
-		// If the player should jump...
+			Debug.Log(m_Anim.GetInteger("IsMoving"));
+            // If the player should jump...
+
             if (m_Grounded && jump)// && m_Anim.GetBool("Ground"))
             {
                 Debug.Log("JUMP!");

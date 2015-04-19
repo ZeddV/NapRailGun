@@ -73,9 +73,9 @@ public class Weapon : MonoBehaviour {
 		//Check Shoot
 		if (fireRate == 0) {
 			if (Input.GetButtonDown (controlsScript.fire)) {
-				Debug.Log ("Fire");
-				Shoot();
-			}
+					Debug.Log ("Fire");
+					Shoot();
+				}
 		}
 		else {
 			if (Input.GetButton (controlsScript.fire) && Time.time > timeToFire) {
