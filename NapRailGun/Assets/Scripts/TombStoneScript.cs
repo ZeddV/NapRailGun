@@ -16,7 +16,7 @@ public class TombStoneScript : MonoBehaviour {
 	}
 
 	void awakePlayer() {
-		respawnScript.numPlayers = respawnScript.numPlayers + 1;
+		respawnScript.change (1);
 		player.SetActive (true);
 		Destroy (gameObject);
 	}
