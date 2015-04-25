@@ -4,7 +4,8 @@ using System.Collections;
 
 public class MasterScript : MonoBehaviour {
 
-	public int playerQuantity = 2;
+	public GameSettings gameSettings;
+	
 	public bool pinkMode = false;
 	public GameObject prefabPlayer;
 	public GameObject prefabStatus;
@@ -34,6 +35,10 @@ public class MasterScript : MonoBehaviour {
 	public RuntimeAnimatorController redContr;
 	public RuntimeAnimatorController greenContr;
 
+	void Awake(){
+		gameSettings = GameObject.Find ("GameSettings").GetComponent<GameSettings>();
+	}
+
 	// Use this for initialization
 	void Start () {
 		playerStatusPosition[0] = new Vector3(-681.5f, -129.6f, 0);
@@ -51,34 +56,39 @@ public class MasterScript : MonoBehaviour {
 		GameObject panel;
 		GameObject player;
 		Platformer2DUserControl characterControl;
-		for(int i = 0; i < playerQuantity; i++){
-			panel = Instantiate (prefabStatus, playerStatusPosition[i], prefabStatus.transform.rotation ) as GameObject;
-			panel.transform.parent = canvasStatus;
-			panel.GetComponent<RectTransform>().anchoredPosition = playerStatusPosition[i];
-			panel.GetComponent<RectTransform>().localScale = new Vector3(0.4f, 0.4f, 0);
+		txtBottom.transform.gameObject.SetActive(false);
+		for(int i = 0; i < gameSettings.players.Length; i++){
+			if(gameSettings.players[i].active){
+				panel = Instantiate (prefabStatus, playerStatusPosition[i], prefabStatus.transform.rotation ) as GameObject;
+				panel.transform.parent = canvasStatus;
+				panel.GetComponent<RectTransform>().anchoredPosition = playerStatusPosition[i];
+				panel.GetComponent<RectTransform>().localScale = new Vector3(0.4f, 0.4f, 0);
+				panel.GetComponent<StatusControl>().txtName.text = gameSettings.players[i].name;
 
-			player = Instantiate(prefabPlayer, playerPosition[i].position, playerPosition[i].rotation) as GameObject;
-			player.GetComponent<PlatformerCharacter2D>().setStatusControl(panel);
-			RuntimeAnimatorController controller;
-			if(i == 0) {
-				player.GetComponent<Animator>().runtimeAnimatorController = redContr;
-			} else if(i == 1) {
-				player.GetComponent<Animator>().runtimeAnimatorController = greenContr;
+
+				player = Instantiate(prefabPlayer, playerPosition[i].position, playerPosition[i].rotation) as GameObject;
+				player.GetComponent<PlatformerCharacter2D>().setStatusControl(panel);
+				RuntimeAnimatorController controller;
+				if(i == 0) {
+					player.GetComponent<Animator>().runtimeAnimatorController = redContr;
+				} else if(i == 1) {
+					player.GetComponent<Animator>().runtimeAnimatorController = greenContr;
+				}
+	 
+
+				player.GetComponent<PlatformerCharacter2D>().tombstonePrefab = tombstonePrefab;
+				//player.GetComponent<PlatformerCharacter2D>().tombstoneTexture = tombstoneSprites[i];
+				player.GetComponent<PlatformerCharacter2D>().respawnScript = this.respawnScript;
+				player.tag = "Player"+(i+1);
+
+
+				characterControl = player.GetComponent<Platformer2DUserControl>();
+				characterControl.jump = "Jump"+(i+1);
+				characterControl.fire = "Fire"+(i+1);
+				characterControl.shield = "Shield"+(i+1);
+				characterControl.axisHorizontal = "Horizontal"+(i+1);
+				characterControl.axisVertical = "Vertical"+(i+1);
 			}
- 
-
-			player.GetComponent<PlatformerCharacter2D>().tombstonePrefab = tombstonePrefab;
-			//player.GetComponent<PlatformerCharacter2D>().tombstoneTexture = tombstoneSprites[i];
-			player.GetComponent<PlatformerCharacter2D>().respawnScript = this.respawnScript;
-			player.tag = "Player"+(i+1);
-
-
-			characterControl = player.GetComponent<Platformer2DUserControl>();
-			characterControl.jump = "Jump"+(i+1);
-			characterControl.fire = "Fire"+(i+1);
-			characterControl.shield = "Shield"+(i+1);
-			characterControl.axisHorizontal = "Horizontal"+(i+1);
-			characterControl.axisVertical = "Vertical"+(i+1);
 		}
 	}
 	
@@ -119,11 +129,11 @@ public class MasterScript : MonoBehaviour {
 					txtBottom.transform.gameObject.SetActive(false);
 				} else {
 					pause = true;
+					txtMid.text = "Pause";
 					Time.timeScale = 0;
 					grayLayer.SetActive(true);
 					txtMid.transform.gameObject.SetActive(true);
 					txtBottom.transform.gameObject.SetActive(true);
-					txtMid.text = "Pause";
 				}
 			}
 		}
@@ -132,16 +142,22 @@ public class MasterScript : MonoBehaviour {
 			if(Input.GetKeyDown (KeyCode.Q)){
 				Application.Quit();
 			} else if(Input.GetKeyDown (KeyCode.R)){
+				Application.LoadLevel(1);
+			} else if(Input.GetKeyDown (KeyCode.M)){
 				Application.LoadLevel(0);
-			} 
+			}
 		}
 
 		if(finish){
 			Time.timeScale = 0;
 			grayLayer.SetActive(true);
-			txtMid.text = "You Are Awesome!";
+			txtMid.text = "Player Wins!";
+			txtBottom.transform.gameObject.SetActive(true);
 			txtMid.transform.gameObject.SetActive(true);
 		}
+
+
+
 
 
 	}

@@ -10,7 +10,7 @@ GameObject:
   - 224: {fileID: 22404716}
   - 222: {fileID: 22215518}
   - 114: {fileID: 11495170}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 222: {fileID: 22297734}
   - 114: {fileID: 11433224}
   - 114: {fileID: 11411028}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 224: {fileID: 22412564}
   - 222: {fileID: 22297224}
   - 114: {fileID: 11441204}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnergyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - 224: {fileID: 22416506}
   - 222: {fileID: 22270212}
   - 114: {fileID: 11449838}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - 224: {fileID: 22424130}
   - 222: {fileID: 22203508}
   - 114: {fileID: 11492074}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnergyFillImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - 224: {fileID: 22408278}
   - 222: {fileID: 22201306}
   - 114: {fileID: 11490492}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnergyBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - 224: {fileID: 22404692}
   - 222: {fileID: 22217954}
   - 114: {fileID: 11485646}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - 224: {fileID: 22479418}
   - 222: {fileID: 22291508}
   - 114: {fileID: 11408840}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthFillImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
