@@ -58,13 +58,13 @@ public class EnergyBallController : MonoBehaviour {
 		for (int i = 0; i < dummyMax; i++) {
 
 			do {
-				position.Set(Random.Range(-12, 12),Random.Range(-12, 12),0);
+				position.Set(Random.Range(-11, 11),Random.Range(-11, 11),0);
 			} while(insideSomething(position));
 
 
 			GameObject obj = Instantiate(prefab, position, transform.rotation) as GameObject;
 			obj.GetComponent<EnergyBallScript>().controller = this;
-			obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(100*Mathf.Sign(Random.Range(1,1)), 0));
+			obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(200*Mathf.Sign(Random.Range(-1,1)), 0));
 			////Debug.Log(obj.GetComponent<EnergyBallScript>().controller);
 			maxBalls--;
 

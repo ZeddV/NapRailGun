@@ -14,7 +14,7 @@ public class MasterScript : MonoBehaviour {
 
 	bool PlayerAuswahl = true;
 	bool finish = false; 
-	bool begin = true;
+	bool begin = false;
 	bool timebegin = false;
 	bool pause = false;
 	float tempTime; 
@@ -79,6 +79,11 @@ public class MasterScript : MonoBehaviour {
 			characterControl.shield = "Shield"+(i+1);
 			characterControl.axisHorizontal = "Horizontal"+(i+1);
 			characterControl.axisVertical = "Vertical"+(i+1);
+
+			if(!begin) {
+				//grayLayer.SetActive(false);
+				txtMid.gameObject.SetActive(false);
+			}
 		}
 	}
 	
@@ -114,13 +119,13 @@ public class MasterScript : MonoBehaviour {
 				if(pause){
 					pause = false;
 					Time.timeScale = 1;
-					grayLayer.SetActive(false);
+					//grayLayer.SetActive(false);
 					txtMid.transform.gameObject.SetActive(false);
 					txtBottom.transform.gameObject.SetActive(false);
 				} else {
 					pause = true;
 					Time.timeScale = 0;
-					grayLayer.SetActive(true);
+					//grayLayer.SetActive(true);
 					txtMid.transform.gameObject.SetActive(true);
 					txtBottom.transform.gameObject.SetActive(true);
 					txtMid.text = "Pause";
@@ -138,7 +143,7 @@ public class MasterScript : MonoBehaviour {
 
 		if(finish){
 			Time.timeScale = 0;
-			grayLayer.SetActive(true);
+			//grayLayer.SetActive(true);
 			txtMid.text = "You Are Awesome!";
 			txtMid.transform.gameObject.SetActive(true);
 		}

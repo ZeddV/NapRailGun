@@ -55,7 +55,6 @@ GameObject:
   - 4: {fileID: 478644}
   - 212: {fileID: 21239302}
   - 95: {fileID: 9594544}
-  - 58: {fileID: 5832576}
   - 50: {fileID: 5054752}
   - 114: {fileID: 11472964}
   - 114: {fileID: 11438028}
@@ -64,6 +63,10 @@ GameObject:
   - 114: {fileID: 11477756}
   - 82: {fileID: 8264224}
   - 114: {fileID: 11487240}
+  - 58: {fileID: 5842420}
+  - 60: {fileID: 6069426}
+  - 58: {fileID: 5840406}
+  - 68: {fileID: 6804866}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -227,8 +230,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.92665195, y: 2.5529592, z: 0}
-  m_LocalScale: {x: .779999971, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: .980000019, y: .980000019, z: 1}
   m_Children:
   - {fileID: 407238}
   - {fileID: 415212}
@@ -253,7 +256,20 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 2
   m_CollisionDetection: 1
---- !u!58 &5832576
+--- !u!58 &5840406
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162930}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 47e916f38a380524da2e0e9757eb8498, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -.239999995, y: -.579999983}
+  serializedVersion: 2
+  m_Radius: .412038922
+--- !u!58 &5842420
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -263,16 +279,16 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -.689999998}
+  m_Offset: {x: -.25, y: -.430000007}
   serializedVersion: 2
-  m_Radius: .439999998
+  m_Radius: .595931053
 --- !u!60 &6015092
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
@@ -283,19 +299,59 @@ PolygonCollider2D:
       - {x: .499341309, y: -.474809229}
       - {x: -.499383807, y: -.470915854}
       - {x: -.352337241, y: -.993927717}
+--- !u!60 &6069426
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162930}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 47e916f38a380524da2e0e9757eb8498, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: .0139550287, y: .703726232}
+      - {x: -.0659704208, y: .908883512}
+      - {x: -.17634216, y: .966480792}
+      - {x: -.333420098, y: .963441432}
+      - {x: -.469034046, y: .900860429}
+      - {x: -.575982273, y: .721614957}
+      - {x: -.670960248, y: -.689955652}
+      - {x: -.588856399, y: -.914249897}
+      - {x: -.393913239, y: -.958341599}
+      - {x: -.113640271, y: -.968202531}
+      - {x: .0887671262, y: -.91142112}
+      - {x: .302970171, y: -.0857518613}
+      - {x: .311003894, y: .292892843}
 --- !u!61 &6136764
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: .25268364}
   serializedVersion: 2
   m_Size: {x: 1, y: 1.44767308}
+--- !u!68 &6804866
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162930}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: .129999995}
+  m_Points:
+  - {x: -.451906353, y: 1.04634809}
+  - {x: -.00344879762, y: 1.04634905}
 --- !u!82 &8220946
 AudioSource:
   m_ObjectHideFlags: 1
@@ -533,13 +589,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusControl: {fileID: 0}
   statusScript: {fileID: 0}
-  m_MaxSpeed: 40
-  m_JumpForce: 1100
+  m_MaxSpeed: 12
+  m_JumpForce: 700
   m_CrouchSpeed: .360000014
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
+  numJumps: 2
   m_Grounded: 0
   m_SideCollisionRight: 0
   m_SideCollisionLeft: 0
@@ -658,7 +715,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1783731295
+  m_SortingLayerID: -563532881
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: dcec9fd29bbcd324eb86c3a6fff661a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

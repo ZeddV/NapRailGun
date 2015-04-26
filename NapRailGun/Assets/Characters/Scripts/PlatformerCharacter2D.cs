@@ -11,7 +11,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
-	
+
+	private float maxSpeedSqr;
+	public int numJumps = 2;
+	private int jumpsLeft;
+
 	private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	public bool m_Grounded;            // Whether or not the player is grounded.
@@ -34,7 +38,9 @@ public class PlatformerCharacter2D : MonoBehaviour
 	
 	private void Awake()
 	{
-
+		numJumps--; //When the player jumps, m_Grounded is true for the next tick
+		jumpsLeft = numJumps;
+		maxSpeedSqr = m_MaxSpeed * m_MaxSpeed;
 		//if (gameObject.tag == "Player") {
 		//	Destroy (gameObject);
 		//}
@@ -50,6 +56,21 @@ public class PlatformerCharacter2D : MonoBehaviour
 		m_Shield = transform.Find ("Shield");
 		
 		//Invoke ("die", 2f);
+	}
+
+	private void Update() {
+		/* // This makes diagonal and vertical movement really ridiculous
+		 * if(m_Rigidbody2D.velocity.sqrMagnitude > maxSpeedSqr) {
+			Debug.Log ("SQRMAG " + m_Rigidbody2D.velocity.sqrMagnitude);
+			m_Rigidbody2D.velocity = m_Rigidbody2D.velocity.normalized;
+			Debug.Log ("NMLZD " + m_Rigidbody2D.velocity.sqrMagnitude);
+			m_Rigidbody2D.velocity = m_Rigidbody2D.velocity * m_MaxSpeed;
+			Debug.Log ("VEL " + m_Rigidbody2D.velocity);
+		}*/
+
+		if (m_Rigidbody2D.velocity.x > m_MaxSpeed || m_Rigidbody2D.velocity.x < -m_MaxSpeed) {
+			m_Rigidbody2D.velocity.Set(m_MaxSpeed, m_Rigidbody2D.velocity.y);
+		}
 	}
 	
 	
@@ -120,7 +141,12 @@ public class PlatformerCharacter2D : MonoBehaviour
 				}
 				if (!m_SideCollisionRight)
 					m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-				
+
+				//if(m_Rigidbody2D.velocity.x > 9f) {
+					//Debug.Log(m_Rigidbody2D.velocity + " " + m_Grounded);
+				//}
+
+				/*Debug.Log(m_Rigidbody2D.velocity);*/
 				m_SideCollisionRight = false;
 				colliders = null;
 				
@@ -143,7 +169,9 @@ public class PlatformerCharacter2D : MonoBehaviour
 					m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
 					//Debug.Log ("NO Collision Left");
 				}
-				
+				//if(m_Rigidbody2D.velocity.x < -9f) {
+				//	Debug.Log(m_Rigidbody2D.velocity + " " + m_Grounded);
+				//}
 				m_SideCollisionLeft = false;
 				colliders = null;
 			}
@@ -177,8 +205,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
 		
 		// If the player should jump...
-		
-		if (m_Grounded && jump)// && m_Anim.GetBool("Ground"))
+		if (m_Grounded) 
+			jumpsLeft = numJumps;
+
+
+		if (jump && jumpsLeft > 0)// && m_Anim.GetBool("Ground"))
 		{
 			//Debug.Log("JUMP!");
 			// Add a vertical force to the player.
@@ -187,6 +218,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 			m_Grounded = false;
 			//m_Anim.SetBool("Ground", false);
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			jumpsLeft--;
 		}
 		
 		if(shield)

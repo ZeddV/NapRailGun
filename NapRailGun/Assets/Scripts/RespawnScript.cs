@@ -4,7 +4,7 @@ using System.Collections;
 public class RespawnScript : MonoBehaviour {
 
 	public MasterScript masterScript;
-	public int numPlayers = 2;
+	public int numPlayers = 4;
 
 	// Use this for initialization
 	void Start () {

@@ -15,6 +15,7 @@ public class PortalScript : MonoBehaviour {
 	public Direction exitDirection;
 	public Vector3 direction;
 
+	public float offsetFactorLeft = 2f;
 
 
 	public enum Direction{LEFT, RIGHT, UP, DOWN};
@@ -89,6 +90,7 @@ public class PortalScript : MonoBehaviour {
 			velInSec = -velocity.y;
 
 			offInMain = -offsetVector.x;
+			offInMain *= offsetFactorLeft;
 			break;		
 			
 		case Direction.RIGHT:
@@ -127,6 +129,7 @@ public class PortalScript : MonoBehaviour {
 		float posZ = linkedPosition.z;
 
 		////Debug.Log (velocity);
+		Debug.Log ("entered " + gameObject.name);
 
 		offInMain *= 1.05f;
 		//Debug.Log ("1 "+player.transform.position);
@@ -154,7 +157,7 @@ public class PortalScript : MonoBehaviour {
 			break;		
 			
 		case Direction.UP:
-			posY += offInMain;
+			posY += offInMain*1.2f;
 			posX += offsetVector.x;
 			
 			player.transform.position = new Vector3(posX, posY, posZ);

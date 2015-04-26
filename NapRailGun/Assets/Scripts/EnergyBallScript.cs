@@ -16,23 +16,25 @@ public class EnergyBallScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		if(collision.collider.gameObject.GetComponents<RespawnScript>() == null)
+		if(collision.collider.gameObject.GetComponent<RespawnScript>() == null)
 		{
 			return;
 		}
 
-			if (collision.collider.gameObject.tag.StartsWith ("Player") && collision.collider.gameObject.GetComponents<RespawnScript>() != null) {
-			//UpdatePlayer
 			StatusControl script = collision.collider.gameObject.GetComponent<PlatformerCharacter2D>().statusScript;
 			if(script != null) {
 				script.addEnergy(energyValue);
 			}
 
+			Component[] colliders = gameObject.GetComponents<Collider2D> ();
+			Destroy (colliders [0]);
+			Destroy (colliders [1]);
+			Destroy (gameObject.GetComponent<SpriteRenderer> ());
+
 			gameObject.GetComponent<AudioSource>().Play();
 
 			//Number stuff
 			controller.maxBalls++;
-			Destroy(gameObject);
-		}
+			Destroy(gameObject, gameObject.GetComponent<AudioSource>().clip.length);
 	}
 }
