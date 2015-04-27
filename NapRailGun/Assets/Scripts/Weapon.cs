@@ -58,10 +58,10 @@ public class Weapon : MonoBehaviour {
 
 		if(left){
 			changeRotationOfFirePoint(0);
-			shootDirection = new Vector2(-1, 0);
+			shootDirection = new Vector2(1, 0);
 		} else {
 			changeRotationOfFirePoint(180);
-			shootDirection = new Vector2(1, 0);
+			shootDirection = new Vector2(-1, 0);
 		}
 		float vertDirection = Input.GetAxis (controlsScript.axisVertical);
 		if(vertDirection < 0){
