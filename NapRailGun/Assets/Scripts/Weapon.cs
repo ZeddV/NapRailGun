@@ -1,7 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Weapon : MonoBehaviour {
+	private static Vector3 FP_LEFT = new Vector3(-0.68f, 0.1f, 0);
+	private static Vector3 FP_RIGHT = new Vector3(0.68f, 0.1f, 0);
+	private static Vector3 FP_UP_RIGHT = new Vector3(0.3f, 1, 0);
+	private static Vector3 FP_UP_LEFT = new Vector3(-0.3f, 1, 0);
+	private static Vector3 FP_DOWN_RIGHT = new Vector3(0.3f, -1, 0);
+	private static Vector3 FP_DOWN_LEFT = new Vector3(-0.3f, -1, 0);
+
+	public float AXIS_SENSITIVITY = 0.1f;
+	float FAC_VERT = 1.5f;
+
 	public float energyCost = 20;
 
 	public float fireRate = 0;
@@ -20,7 +31,9 @@ public class Weapon : MonoBehaviour {
 	LineRenderer beam;
 
 	public Vector2 shootDirection;
+	//bool left, up;
 	bool left;
+	bool? up;
 
 	public StatusControl statusScript;
 	public Platformer2DUserControl controlsScript;
@@ -49,14 +62,71 @@ public class Weapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float horizontalDirection = Input.GetAxis (controlsScript.axisHorizontal);
-		if(horizontalDirection > 0){
-			left = true;
-		} 
-		else if(horizontalDirection < 0){
+		if(horizontalDirection > AXIS_SENSITIVITY){
 			left = false;
+		} else if(horizontalDirection < -AXIS_SENSITIVITY){
+			left = true;
 		}
 
-		if(left){
+		float verticalDirection = Input.GetAxis (controlsScript.axisVertical);
+		up = null;
+		if(verticalDirection > AXIS_SENSITIVITY){
+			up = true;
+		} else if(verticalDirection < -AXIS_SENSITIVITY){
+			up = false;
+		}
+
+		if(left && !up.HasValue) {
+			Debug.Log ("L");
+			changeRotationOfFirePoint(180);
+			shootDirection = new Vector2(-1, 0);
+			firePoint.transform.localPosition = FP_LEFT;
+		} else if(!left && !up.HasValue) {
+			//Debug.Log ("R");
+			changeRotationOfFirePoint(0);
+			shootDirection = new Vector2(1, 0);
+			firePoint.transform.localPosition = FP_RIGHT;
+		} else if(up.HasValue && (bool)up && left) {
+			if(verticalDirection * FAC_VERT >= -horizontalDirection) {
+			//Debug.Log ("LU");
+			changeRotationOfFirePoint(90);
+			shootDirection = new Vector2(0, 1.5f);
+			firePoint.transform.localPosition = FP_UP_LEFT;
+			} else {
+				//Debug.Log ("L");
+				changeRotationOfFirePoint(180);
+				shootDirection = new Vector2(-1, 0);
+				firePoint.transform.localPosition = FP_LEFT;
+			}
+		} else if(up.HasValue && (bool)up && !left) {
+			if(verticalDirection * FAC_VERT >= horizontalDirection) {
+				//Debug.Log ("RU");
+				changeRotationOfFirePoint(90);
+				shootDirection = new Vector2(0, 1.5f);
+				firePoint.transform.localPosition = FP_UP_RIGHT;
+			} else {
+				//Debug.Log ("R");
+				changeRotationOfFirePoint(0);
+				shootDirection = new Vector2(1, 0);
+				firePoint.transform.localPosition = FP_RIGHT;
+			}
+		} else if(up.HasValue && (bool)!up && left) {
+			changeRotationOfFirePoint(270);
+			shootDirection = new Vector2(0, -1.5f);
+			firePoint.transform.localPosition = FP_DOWN_LEFT;
+			//Debug.Log ("LD");
+		} else if(up.HasValue && (bool)!up && !left) {
+			changeRotationOfFirePoint(270);
+			shootDirection = new Vector2(0, -1.5f);
+			firePoint.transform.localPosition = FP_DOWN_RIGHT;
+			//Debug.Log ("RD");
+		}
+
+
+
+
+		/// OLD BELOW
+		/*if(left){
 			changeRotationOfFirePoint(0);
 			shootDirection = new Vector2(1, 0);
 		} else {
@@ -71,7 +141,7 @@ public class Weapon : MonoBehaviour {
 		} else if(vertDirection > 0){
 			changeRotationOfFirePoint(90);
 			shootDirection = new Vector2(0, 1.5f);
-		}
+		}*/
 
 		//Check Shoot
 		if (fireRate == 0) {
