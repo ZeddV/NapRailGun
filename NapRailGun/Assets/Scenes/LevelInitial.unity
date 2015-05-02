@@ -18499,6 +18499,24 @@ Prefab:
       propertyPath: txtBottom
       value: 
       objectReference: {fileID: 714288742}
+    - target: {fileID: 11431942, guid: d2a70eb6c3fd6504c841c946bb88acd8, type: 2}
+      propertyPath: redSpriteSheet
+      value: 
+      objectReference: {fileID: 21300000, guid: d2327197b8cdf924d9f2d33fa6532e56,
+        type: 3}
+    - target: {fileID: 11431942, guid: d2a70eb6c3fd6504c841c946bb88acd8, type: 2}
+      propertyPath: greenSpriteSheet
+      value: 
+      objectReference: {fileID: 21300000, guid: fe9e8a2ea1a14b3418d466d2d2267dd5,
+        type: 3}
+    - target: {fileID: 11431942, guid: d2a70eb6c3fd6504c841c946bb88acd8, type: 2}
+      propertyPath: blueContr
+      value: 
+      objectReference: {fileID: 9100000, guid: c01b9929d7d0526448112fb31ffc0063, type: 2}
+    - target: {fileID: 11431942, guid: d2a70eb6c3fd6504c841c946bb88acd8, type: 2}
+      propertyPath: purpleContr
+      value: 
+      objectReference: {fileID: 9100000, guid: 79d233c63eff8cb41a237dd1bfc02b04, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2a70eb6c3fd6504c841c946bb88acd8, type: 2}
   m_IsPrefabParent: 0

@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 3eacaec085474b24cb9d04d7c2acf913
-timeCreated: 1429443326
+guid: 5c1e82b1d7d86d84d870a6553bbee700
+timeCreated: 1429443327
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: walk_color4_0
-    21300002: walk_color4_1
-    21300004: walk_color4_2
-    21300006: walk_color4_3
-    21300008: walk_color4_4
-    21300010: walk_color4_5
-    21300012: walk_color4_6
-    21300014: walk_color4_7
-    21300016: walk_color4_8
-    21300018: walk_color4_9
-    21300020: walk_color4_10
-    21300022: walk_color4_11
-    21300024: walk_color4_12
-    21300026: walk_color4_13
-    21300028: walk_color4_14
-    21300030: walk_color4_15
-    21300032: walk_color4_16
-    21300034: walk_color4_17
-    21300036: walk_color4_18
-    21300038: walk_color4_19
-    21300040: walk_color4_20
-    21300042: walk_color4_21
+    21300000: walk_color5_0
+    21300002: walk_color5_1
+    21300004: walk_color5_2
+    21300006: walk_color5_3
+    21300008: walk_color5_4
+    21300010: walk_color5_5
+    21300012: walk_color5_6
+    21300014: walk_color5_7
+    21300016: walk_color5_8
+    21300018: walk_color5_9
+    21300020: walk_color5_10
+    21300022: walk_color5_11
+    21300024: walk_color5_12
+    21300026: walk_color5_13
+    21300028: walk_color5_14
+    21300030: walk_color5_15
+    21300032: walk_color5_16
+    21300034: walk_color5_17
+    21300036: walk_color5_18
+    21300038: walk_color5_19
+    21300040: walk_color5_20
+    21300042: walk_color5_21
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -71,7 +71,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: walk_color4_0
+    - name: walk_color5_0
       rect:
         serializedVersion: 2
         x: 214
@@ -81,7 +81,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_1
+    - name: walk_color5_1
       rect:
         serializedVersion: 2
         x: 471
@@ -91,7 +91,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_2
+    - name: walk_color5_2
       rect:
         serializedVersion: 2
         x: 692
@@ -101,7 +101,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_3
+    - name: walk_color5_3
       rect:
         serializedVersion: 2
         x: 909
@@ -111,7 +111,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_4
+    - name: walk_color5_4
       rect:
         serializedVersion: 2
         x: 1438
@@ -121,7 +121,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_5
+    - name: walk_color5_5
       rect:
         serializedVersion: 2
         x: 1867
@@ -131,7 +131,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_6
+    - name: walk_color5_6
       rect:
         serializedVersion: 2
         x: 76
@@ -141,7 +141,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_7
+    - name: walk_color5_7
       rect:
         serializedVersion: 2
         x: 1207
@@ -151,7 +151,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_8
+    - name: walk_color5_8
       rect:
         serializedVersion: 2
         x: 174
@@ -161,7 +161,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_9
+    - name: walk_color5_9
       rect:
         serializedVersion: 2
         x: 260
@@ -171,7 +171,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_10
+    - name: walk_color5_10
       rect:
         serializedVersion: 2
         x: 470
@@ -181,7 +181,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_11
+    - name: walk_color5_11
       rect:
         serializedVersion: 2
         x: 719
@@ -191,7 +191,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_12
+    - name: walk_color5_12
       rect:
         serializedVersion: 2
         x: 943
@@ -201,7 +201,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_13
+    - name: walk_color5_13
       rect:
         serializedVersion: 2
         x: 1346
@@ -211,7 +211,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_14
+    - name: walk_color5_14
       rect:
         serializedVersion: 2
         x: 1437
@@ -221,7 +221,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_15
+    - name: walk_color5_15
       rect:
         serializedVersion: 2
         x: 1869
@@ -231,7 +231,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_16
+    - name: walk_color5_16
       rect:
         serializedVersion: 2
         x: 26
@@ -241,7 +241,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_17
+    - name: walk_color5_17
       rect:
         serializedVersion: 2
         x: 1155
@@ -251,7 +251,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_18
+    - name: walk_color5_18
       rect:
         serializedVersion: 2
         x: 1610
@@ -261,7 +261,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_19
+    - name: walk_color5_19
       rect:
         serializedVersion: 2
         x: 41
@@ -271,7 +271,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_20
+    - name: walk_color5_20
       rect:
         serializedVersion: 2
         x: 1184
@@ -281,7 +281,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walk_color4_21
+    - name: walk_color5_21
       rect:
         serializedVersion: 2
         x: 1633

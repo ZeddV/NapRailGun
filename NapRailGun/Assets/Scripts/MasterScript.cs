@@ -33,6 +33,8 @@ public class MasterScript : MonoBehaviour {
 	public Texture2D[] tombstoneSprites;
 
 	public RuntimeAnimatorController redContr;
+	public RuntimeAnimatorController blueContr;
+	public RuntimeAnimatorController purpleContr;
 	public RuntimeAnimatorController greenContr;
 
 	void Awake(){
@@ -68,13 +70,20 @@ public class MasterScript : MonoBehaviour {
 
 				player = Instantiate(prefabPlayer, playerPosition[i].position, playerPosition[i].rotation) as GameObject;
 				player.GetComponent<PlatformerCharacter2D>().setStatusControl(panel);
-				RuntimeAnimatorController controller;
-				if(i == 0) {
+				switch(i) {
+				case 0:
 					player.GetComponent<Animator>().runtimeAnimatorController = redContr;
-				} else if(i == 1) {
+					break;
+				case 1:
+					player.GetComponent<Animator>().runtimeAnimatorController = blueContr;
+					break;
+				case 2:
+					player.GetComponent<Animator>().runtimeAnimatorController = purpleContr;
+					break;
+				case 3:
 					player.GetComponent<Animator>().runtimeAnimatorController = greenContr;
-				}
-	 
+					break;
+				} 
 
 				player.GetComponent<PlatformerCharacter2D>().tombstonePrefab = tombstonePrefab;
 				//player.GetComponent<PlatformerCharacter2D>().tombstoneTexture = tombstoneSprites[i];
